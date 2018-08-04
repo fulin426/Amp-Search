@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const COLUMNS = [
+/*const COLUMNS = [
   "carbohydrate_g",
   "protein_g",
   "fa_sat_g",
@@ -64,7 +64,7 @@ app.get("/api/food", (req, res) => {
   } else {
     res.json([]);
   }
-});
+});*/
 
 app.listen(app.get("port"), () => {
   console.log(`Find the server at: http://localhost:${app.get("port")}/`); // eslint-disable-line no-console
