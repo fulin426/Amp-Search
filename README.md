@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # `create-react-app` with a server example
 
 [![TravisCI](https://travis-ci.org/fullstackreact/food-lookup-demo.svg?branch=master)](https://travis-ci.org/fullstackreact/food-lookup-demo)
@@ -130,3 +131,7 @@ git push heroku master
 ```
 
 Heroku will give you a link at which to view your live app.
+=======
+# StackRegions
+Search for jobs based on region and skills
+>>>>>>> 28e6cb0c78e7f35e39bf35b2f2ce8108cb52e6b9
