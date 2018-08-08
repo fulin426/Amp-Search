@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Category(props) {
+const Category = props => {
     return (
         <div>
             {props._text}
@@ -9,5 +9,7 @@ export default function Category(props) {
 };
 
 Category.defaultProps = {
-    text: ''
+    _text: ''
 };
+
+export default Category;

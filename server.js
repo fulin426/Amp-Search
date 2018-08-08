@@ -24,18 +24,14 @@ if (process.env.NODE_ENV === "production") {
 
 3 - res.send the json*/
 
-/*req.params.location*/
-
 app.get("/api/search/:location", (req, res) => {
   let query = req.params.location;
 
   request(`http://careers.stackoverflow.com/jobs/feed?location=${query}`, function (error, response, body) {
-  console.log('error:', error);
-  console.log('statusCode:', response && response.statusCode); 
-  console.log(`Searched for ${query}`);
-  
-  let result = convert.xml2json(body, {compact: true, spaces: 4});
-  res.send(result);
+    console.log('error:', error);
+    console.log('statusCode:', response && response.statusCode);
+    let result = convert.xml2json(body, {compact: true, spaces: 4});
+    res.send(result);
   });
 });
 

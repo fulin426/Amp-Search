@@ -36,14 +36,12 @@ class App extends Component {
   }
 }
 */
-import React, { Component } from "react";
+import React from "react";
 import Client from "./Client";
 import Category from "./Category";
-/*import Request from 'superagent';*/
-/*import convert from 'xml-js';*/
 /*import SearchBar from "./SearchBar";*/
 
-class App extends Component {
+class App extends React.Component {
   
   constructor(props) {
     super(props);
@@ -51,7 +49,7 @@ class App extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this)
   }
 
-  componentWillMount() {
+/*  componentWillMount() {
     let query = 94112;
     Client.search(query, jobs => {
       this.setState({
@@ -59,21 +57,17 @@ class App extends Component {
         returned: true
         });
       });
-  }
+  }*/
 
   onFormSubmit = (e) => {
     e.preventDefault();
-    /*let query = this.refs.zipcode.value;*/
-    /*const url = `http://careers.stackoverflow.com/jobs/feed?location=${query}`;*/
-  
-/*    Client.search(query, jobs => {
-    this.setState({
-      jobs: jobs
+    let query = this.refs.zipcode.value;
+    Client.search(query, jobs => {
+      this.setState({
+        jobs: jobs,
+        returned: true
       });
-    });*/
-/*    const categories = this.state.jobs.rss.channel.item[0].category;
-    console.log(categories);
-    this.setState(categories);*/
+    });
   };
 
   render() {
@@ -87,7 +81,10 @@ class App extends Component {
         </li>
       );
     console.log(Categories);
+    } else {
+      let Categories = '';
     }
+
     return (
         <div>
           <form onSubmit={this.onFormSubmit}>
