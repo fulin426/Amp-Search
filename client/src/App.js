@@ -38,33 +38,57 @@ class App extends Component {
 */
 import React, { Component } from "react";
 import Client from "./Client";
+import Category from "./Category";
 /*import Request from 'superagent';*/
 /*import convert from 'xml-js';*/
 /*import SearchBar from "./SearchBar";*/
 
 class App extends Component {
   
-  constructor() {
-    super();
-    this.state = {jobs: []};
-
+  constructor(props) {
+    super(props);
+    this.state = {};
     this.onFormSubmit = this.onFormSubmit.bind(this)
+  }
+
+  componentWillMount() {
+    let query = 94112;
+    Client.search(query, jobs => {
+      this.setState({
+        jobs: jobs,
+        returned: true
+        });
+      });
   }
 
   onFormSubmit = (e) => {
     e.preventDefault();
-    let query = this.refs.zipcode.value;
+    /*let query = this.refs.zipcode.value;*/
     /*const url = `http://careers.stackoverflow.com/jobs/feed?location=${query}`;*/
   
-    Client.search(query, jobs => {
+/*    Client.search(query, jobs => {
     this.setState({
       jobs: jobs
       });
-    });
+    });*/
+/*    const categories = this.state.jobs.rss.channel.item[0].category;
+    console.log(categories);
+    this.setState(categories);*/
   };
 
   render() {
-    return(
+    const returned = this.state.returned;
+    let Categories;
+
+    if (returned === true) {
+      Categories = this.state.jobs.rss.channel.item[0].category.map((category, index) =>
+        <li key={index}>
+          <Category {...category} />
+        </li>
+      );
+    console.log(Categories);
+    }
+    return (
         <div>
           <form onSubmit={this.onFormSubmit}>
             <input
@@ -76,6 +100,9 @@ class App extends Component {
               value="Search" 
             />
           </form>
+          <div>
+            <ul>{Categories}</ul>
+          </div>
         </div>
     );
   }
