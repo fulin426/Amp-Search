@@ -59,14 +59,8 @@ class App extends Component {
     Client.search(query, jobs => {
     this.setState({
       jobs: jobs
-    });
-  });
-
-/*    Request.get(url).then(response => {
-      this.setState({
-        results: response
       });
-    });*/
+    });
   };
 
   render() {

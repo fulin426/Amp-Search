@@ -1,6 +1,8 @@
 const express = require("express");
 const fs = require("fs");
 const sqlite = require("sql.js");
+const request = require('request')
+const convert = require('xml-js')
 
 const filebuffer = fs.readFileSync("db/usda-nnd.sqlite3");
 
@@ -22,9 +24,19 @@ if (process.env.NODE_ENV === "production") {
 
 3 - res.send the json*/
 
+/*req.params.location*/
+
 app.get("/api/search/:location", (req, res) => {
-  res.send({status: 'okay'});
-  /*req.params.location*/
+  let query = req.params.location;
+
+  request(`http://careers.stackoverflow.com/jobs/feed?location=${query}`, function (error, response, body) {
+  console.log('error:', error);
+  console.log('statusCode:', response && response.statusCode); 
+  console.log(`Searched for ${query}`);
+  
+  let result = convert.xml2json(body, {compact: true, spaces: 4});
+  res.send(result);
+  });
 });
 
 /*const COLUMNS = [
