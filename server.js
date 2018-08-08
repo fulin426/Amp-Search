@@ -14,6 +14,18 @@ app.set("port", process.env.PORT || 3001);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+/*req.params.location
+
+1 - make a request from the backend (npm package for making requests) npmjs.com called request
+
+2 - convert the xml to json
+
+3 - res.send the json*/
+
+app.get("/api/search/:location", (req, res) => {
+  res.send({status: 'okay'});
+  /*req.params.location*/
+});
 
 /*const COLUMNS = [
   "carbohydrate_g",
@@ -26,14 +38,12 @@ if (process.env.NODE_ENV === "production") {
 ];
 app.get("/api/food", (req, res) => {
   const param = req.query.q;
-
   if (!param) {
     res.json({
       error: "Missing required parameter `q`"
     });
     return;
   }
-
   // WARNING: Not for production use! The following statement
   // is not protected against SQL injections.
   const r = db.exec(
@@ -43,7 +53,6 @@ app.get("/api/food", (req, res) => {
     limit 100
   `
   );
-
   if (r[0]) {
     res.json(
       r[0].values.map(entry => {
