@@ -45,19 +45,19 @@ class App extends React.Component {
   
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {  returned:false };
     this.onFormSubmit = this.onFormSubmit.bind(this)
   }
 
-/*  componentWillMount() {
-    let query = 94112;
+  componentWillMount() {
+    let query = 'San Jose';
     Client.search(query, jobs => {
       this.setState({
         jobs: jobs,
         returned: true
         });
       });
-  }*/
+  }
 
   onFormSubmit = (e) => {
     e.preventDefault();
@@ -75,12 +75,18 @@ class App extends React.Component {
     let Categories;
 
     if (returned === true) {
-      Categories = this.state.jobs.rss.channel.item[0].category.map((category, index) =>
+      let array = [];
+
+      this.state.jobs.rss.channel.item.forEach(item => 
+        array = array.concat(item.category)
+      );
+      
+      /*this.state.jobs.rss.channel.item[0].category*/
+      Categories = array.map((category, index) =>
         <li key={index}>
           <Category {...category} />
         </li>
       );
-    console.log(Categories);
     } else {
       let Categories = '';
     }
