@@ -1,18 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 
-class SearchBar extends Component {
-	
-	onInputChange(e) {
-/*		console.log(e.target.value);*/
-	}
+class SearchBar extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<input 
-					onChange={this.onInputChange}
-					placeholder='Zipcode'
-				/>
+          
+          <form onSubmit={this.onFormSubmit}>
+            <input
+              placeholder='Enter Zipcode'
+              ref='zipcode'
+            />
+            <input 
+              type="submit" 
+              value="Search" 
+            />
+          </form>
 			</div>
 		);
 	}
