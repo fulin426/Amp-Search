@@ -38,7 +38,7 @@ class App extends Component {
 */
 import React from "react";
 import Client from "./Client";
-import Category from "./Category";
+import Category from "./components/Category";
 /*import SearchBar from "./SearchBar";*/
 
 class App extends React.Component {
@@ -51,9 +51,52 @@ class App extends React.Component {
 
   componentWillMount() {
     let query = 'San Jose';
-    Client.search(query, jobs => {
+    Client.search(query, jobs => {     
+      let items = jobs.rss.channel.item;
+
+      let arry = []
+      items.forEach(item => 
+        arry = arry.concat(item.category)
+      );
+
+      let skillsObj = {};
+      for (let i=0; i<arry.length; i++) {
+        if (skillsObj[arry[i]._text]) {
+          skillsObj[arry[i]._text]++;
+        } else {
+          skillsObj[arry[i]._text] = 1
+        }
+      }
+
+      for (let i=0; i<arry.length; i++) {
+        if (skillsObj[arry[i]._text]) {
+          skillsObj[arry[i]._text]++;
+        } else {
+        skillsObj[arry[i]._text] = 1
+        }
+      }
+
+      let sortable = [];
+      for (let skill in skillsObj) {
+        sortable.push([skill, skillsObj[skill]]);
+      }
+
+      sortable.sort(function(a,b) {
+      return b[1]-a[1];
+      });
+      
+      let slicedSortable = sortable.slice(0,15);
+      let sortedItems = [];
+
+      for (let i=0; i<slicedSortable.length; i++) {
+        sortedItems.push({_text: slicedSortable[i][0] });
+      }
+
+      console.log(sortedItems);
+
       this.setState({
         jobs: jobs,
+        items: sortedItems,
         returned: true
         });
       });
@@ -73,36 +116,10 @@ class App extends React.Component {
   render() {
     const returned = this.state.returned;
     let Categories;
-    let skillsObj = {};
-    let sortable = [];
 
     if (returned === true) {
-      let Arry = [];
-      this.state.jobs.rss.channel.item.forEach(item => 
-        Arry = Arry.concat(item.category)
-      );
-    
-    for (let i=0; i<Arry.length; i++) {
-      if (skillsObj[Arry[i]._text]) {
-        skillsObj[Arry[i]._text]++;
-      } else {
-        skillsObj[Arry[i]._text] = 1
-      }
-    }  
-
-    let sortable = [];
-      for (let skill in skillsObj) {
-        sortable.push([skill, skillsObj[skill]]);
-      }
-
-    sortable.sort(function(a,b) {
-      return b[1]-a[1];
-    });
-
-    console.log(sortable);
-
       /*this.state.jobs.rss.channel.item[0].category*/
-      Categories = Arry.map((category, index) =>
+      Categories = this.state.items.map((category, index) =>
         <li key={index}>
           <Category {...category} />
         </li>
