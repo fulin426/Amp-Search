@@ -73,22 +73,40 @@ class App extends React.Component {
   render() {
     const returned = this.state.returned;
     let Categories;
+    let skillsObj = {};
+    let sortable = [];
 
     if (returned === true) {
-      let array = [];
-
+      let Arry = [];
       this.state.jobs.rss.channel.item.forEach(item => 
-        array = array.concat(item.category)
+        Arry = Arry.concat(item.category)
       );
-      
+    
+    for (let i=0; i<Arry.length; i++) {
+      if (skillsObj[Arry[i]._text]) {
+        skillsObj[Arry[i]._text]++;
+      } else {
+        skillsObj[Arry[i]._text] = 1
+      }
+    }  
+
+    let sortable = [];
+      for (let skill in skillsObj) {
+        sortable.push([skill, skillsObj[skill]]);
+      }
+
+    sortable.sort(function(a,b) {
+      return b[1]-a[1];
+    });
+
+    console.log(sortable);
+
       /*this.state.jobs.rss.channel.item[0].category*/
-      Categories = array.map((category, index) =>
+      Categories = Arry.map((category, index) =>
         <li key={index}>
           <Category {...category} />
         </li>
       );
-    } else {
-      let Categories = '';
     }
 
     return (
