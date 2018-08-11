@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from 'react-redux';
+import { searchJobs } from '../actions/searchAction';
 import Client from "../Client";
 
 class SearchBar extends React.Component {
-  constructor(props) {
+/*  constructor(props) {
     super(props);
     this.state = {
       jobs:'',
@@ -10,11 +12,19 @@ class SearchBar extends React.Component {
     };
     this.onFormSubmit = this.onFormSubmit.bind(this)
   }
+*/
+  componentWillMount() {
+    let query = 'San Mateo';
+    this.props.searchJobs(query);
+  }
 
   onFormSubmit = (e) => {
     e.preventDefault();
     let query = this.refs.zipcode.value;
-    Client.search(query, jobs => {     
+    this.props.searchJobs(query);
+    console.log(this.props.jobs);
+    console.log(this.props.jobs.rss);
+    /*Client.search(query, jobs => {     
       let items = jobs.rss.channel.item;
 
       let arry = []
@@ -60,9 +70,8 @@ class SearchBar extends React.Component {
         items: sortedItems,
         returned: true
         });
-      });
+      });*/
   }
-
 	render() {
 		return (
       <div>
@@ -83,4 +92,8 @@ class SearchBar extends React.Component {
 	}
 }
 
-export default SearchBar;
+const mapStateToProps = state => ({
+  jobs: state
+});
+
+export default connect(mapStateToProps, { searchJobs })(SearchBar);

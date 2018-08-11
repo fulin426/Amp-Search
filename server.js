@@ -26,8 +26,8 @@ if (process.env.NODE_ENV === "production") {
 
 app.get("/api/search/:location", (req, res) => {
   let query = req.params.location;
-
   request(`http://careers.stackoverflow.com/jobs/feed?location=${query}`, function (error, response, body) {
+    console.log(`Searching ${query}`);
     console.log('error:', error);
     console.log('statusCode:', response && response.statusCode);
     let result = convert.xml2json(body, {compact: true, spaces: 4});
