@@ -4,7 +4,7 @@ import { searchJobs } from '../actions/searchAction';
 import Client from "../Client";
 
 class SearchBar extends React.Component {
-/*  constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       jobs:'',
@@ -12,9 +12,9 @@ class SearchBar extends React.Component {
     };
     this.onFormSubmit = this.onFormSubmit.bind(this)
   }
-*/
+
   componentWillMount() {
-    let query = 'San Mateo';
+    let query = 'San Jose';
     this.props.searchJobs(query);
   }
 
@@ -23,8 +23,9 @@ class SearchBar extends React.Component {
     let query = this.refs.zipcode.value;
     this.props.searchJobs(query);
     console.log(this.props.jobs);
-    console.log(this.props.jobs.rss);
-    /*Client.search(query, jobs => {     
+    console.log(this.props.jobs.jobs);
+    console.log(this.props.jobs.jobs.rss.channel.item);
+/*    Client.search(query, jobs => {     
       let items = jobs.rss.channel.item;
 
       let arry = []
@@ -93,7 +94,7 @@ class SearchBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  jobs: state
+  jobs: state.jobs
 });
 
 export default connect(mapStateToProps, { searchJobs })(SearchBar);

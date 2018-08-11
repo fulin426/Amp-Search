@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import Client from "./Client";
-/*import Category from "./components/Category";*/
+import Categories from "./components/Category";
 import SearchBar from "./components/SearchBar";
 import store from './store/store';
 
@@ -23,9 +23,7 @@ class App extends React.Component {
       <Provider store={store}> 
         <div>
           <SearchBar onSubmit={this.onFormSubmit} />
-{/*          <div>
-            <ul>{Categories}</ul>
-          </div>*/}
+          <Categories />
         </div>
       </Provider>     
     );
