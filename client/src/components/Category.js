@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Category = props => {
-    return (
-        <div>
-            {props._text}
-        </div>
-    );
-};
+export class Category extends Component {
+	render() {
+		return (
+			<div>
+				
+			</div>
+		);
+	}
+}
 
-Category.defaultProps = {
-    _text: ''
-};
-
-export default Category;

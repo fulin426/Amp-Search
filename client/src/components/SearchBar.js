@@ -1,10 +1,8 @@
 import React from "react";
-import Client from "./Client";
-/*import Category from "./components/Category";*/
-import SearchBar from "./components/SearchBar";
+import Client from "../Client";
 
-class App extends React.Component {
-/*  constructor(props) {
+class SearchBar extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       jobs:'',
@@ -63,28 +61,26 @@ class App extends React.Component {
         returned: true
         });
       });
-  }*/
-  render() {
-/*    const returned = this.state.returned;
-    let Categories;
-
-    if (returned === true) {
-      Categories = this.state.items.map((category, index) =>
-        <li key={index}>
-          <Category {...category} />
-        </li>
-      );
-    }*/
-
-    return (
-        <div>
-          <SearchBar onSubmit={this.onFormSubmit} />
-{/*          <div>
-            <ul>{Categories}</ul>
-          </div>*/}
-        </div>
-    );
   }
+
+	render() {
+		return (
+      <div>
+        <h2>Search By Region</h2>
+        <br />
+        <form onSubmit={this.onFormSubmit}>
+          <input
+            placeholder='Enter Zipcode'
+            ref='zipcode'
+          />
+          <input 
+            type="submit" 
+            value="Search" 
+            />
+          </form>
+			</div>
+		);
+	}
 }
 
-export default App;
+export default SearchBar;
