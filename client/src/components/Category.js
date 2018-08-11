@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+const start = 0;
+const stop = 5;
 
-class Category extends Component {
+class Category extends Component {  
+
+	nextButton = () => {
+		start += 5;
+		stop += 5 ;
+
+		console.log(start);
+		console.log(stop);
+	}
+
 	render() {
 	const returned = this.props.jobs.returned;
-    let Categories;
+  let Categories;
 
     if (returned === true) {
-
     	let items = this.props.jobs.jobs.rss.channel.item
-      let placeHolder = ['test', 'test', 'test', 'python'];
-
       let arry = [];
-
       items.forEach(item => 
         arry = arry.concat(item.category)
       );
 
-      console.log(arry[0]._text);
-
+      /*San Mateo location cannot read of undefined*/
       let skillsObj = {};
       for (let i=0; i<arry.length; i++) {
         if (skillsObj[arry[i]._text]) {
@@ -45,7 +51,7 @@ class Category extends Component {
       return b[1]-a[1];
       });
       
-      let slicedSortable = sortable.slice(0,15);
+      let slicedSortable = sortable.slice(start, stop);
       let sortedItems = [];
 
       for (let i=0; i<slicedSortable.length; i++) {
@@ -66,7 +72,9 @@ class Category extends Component {
 				<ul>
 					{Categories}
 				</ul>
-
+				<button onClick={this.nextButton}>
+				Next
+				</button>
 			</div>
 		);
 	}
