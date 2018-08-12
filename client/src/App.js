@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
-import Categories from "./components/Category";
-import SearchBar from "./components/SearchBar";
 import store from './store/store';
 import './index.css'
+
+import Categories from "./components/Category";
+import SearchBar from "./components/SearchBar";
+import AddedCategories from "./components/AddedCategories";
+
 
 class App extends React.Component {
 
@@ -12,8 +15,9 @@ class App extends React.Component {
     return (
       <Provider store={store}> 
         <div className="App">
-          <SearchBar onSubmit={this.onFormSubmit} />
+          <SearchBar />
           <Categories />
+          <AddedCategories />
         </div>
       </Provider>     
     );

@@ -66,7 +66,7 @@ class Category extends React.Component {
       <li key={index} 
       	className="SearchResults"
       	onClick={this.addCategory}
-      	data-id= {category.text}
+      	data-id={category.text}
       >
         {category.text}
       </li>
@@ -76,11 +76,8 @@ class Category extends React.Component {
   if (this.props.returned) { 
 		return (
 			<div>
-				<br />
 				<h3>Do you have these skills?</h3>
-				<ul>
-					{Categories}
-				</ul>
+				<ul>{Categories}</ul>
 				<button onClick={this.nextButton}>
 				Next
 				</button>

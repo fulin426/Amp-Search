@@ -4,7 +4,7 @@ import { ADD_CATEGORY } from '../actions/types';
 
 const initialState = {
 	jobs: {},
-	addedCategory: [],
+	addedCategories: [],
 	returned: false,
 	start: 0, 
 	stop: 0
@@ -29,7 +29,7 @@ export default function(state = initialState, action) {
 		case ADD_CATEGORY:
 			return {
 				...state,
-				addedCategory: state.addedCategory.concat(action.new_category),
+				addedCategories: state.addedCategories.concat(action.new_category),
 			};
 		default: 
 			return state;
