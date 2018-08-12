@@ -1,5 +1,6 @@
 import { SEARCH_JOBS } from './types';
 import { NEXT_CATEGORY } from './types';
+import { ADD_CATEGORY } from './types';
 
 import Client from "../Client";
 
@@ -14,5 +15,14 @@ export const searchJobs = (query) => dispatch => {
 }
 
 export const nextCategory = () => dispatch => {
-	dispatch({type: NEXT_CATEGORY});
+	dispatch({
+		type: NEXT_CATEGORY
+	});
+}
+
+export const addCategory = (category) => dispatch => {
+	dispatch({
+		type: ADD_CATEGORY,
+		new_category: category
+	});
 }

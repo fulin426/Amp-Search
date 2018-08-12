@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { nextCategory } from '../actions/actions';
+import { addCategory } from '../actions/actions';
 import '../index.css';
 
 class Category extends React.Component {  
@@ -12,7 +13,7 @@ class Category extends React.Component {
 	}
 
 	addCategory = (e) => {
-		console.log(e.target.dataset.id);
+		this.props.addCategory(e.target.dataset.id);
 	}
 
 	render() {
@@ -57,7 +58,6 @@ class Category extends React.Component {
 
     let slicedSortable = sortable.slice(start, stop);
     let sortedItems = [];
-
     for (let i=0; i<slicedSortable.length; i++) {
       sortedItems.push({text: slicedSortable[i][0] });
     }
@@ -101,4 +101,4 @@ const mapStateToProps = state => ({
   returned: state.jobs.returned
 });
 
-export default connect(mapStateToProps, { nextCategory })(Category);
+export default connect(mapStateToProps, { nextCategory, addCategory })(Category);
