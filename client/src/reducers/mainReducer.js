@@ -3,7 +3,7 @@ import { NEXT_CATEGORY } from '../actions/types';
 
 const initialState = {
 	jobs: {},
-	return: false,
+	returned: false,
 	start: 0, 
 	stop: 0
 }
