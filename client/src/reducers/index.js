@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
-import searchReducer from './searchReducer';
-import nextReducer from './nextReducer';
+import mainReducer from './mainReducer';
+/*import nextReducer from './nextReducer';*/
 
 export default combineReducers ({
-	jobs: searchReducer,
-	next: nextReducer
+	jobs: mainReducer,
 });

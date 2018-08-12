@@ -1,4 +1,6 @@
 import { SEARCH_JOBS } from './types';
+import { NEXT_CATEGORY } from './types';
+
 import Client from "../Client";
 
 export const searchJobs = (query) => dispatch => {
@@ -11,3 +13,6 @@ export const searchJobs = (query) => dispatch => {
       }));
 }
 
+export const nextCategory = () => dispatch => {
+	dispatch({type: NEXT_CATEGORY});
+}

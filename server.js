@@ -16,6 +16,7 @@ app.set("port", process.env.PORT || 3001);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
 /*req.params.location
 
 1 - make a request from the backend (npm package for making requests) npmjs.com called request

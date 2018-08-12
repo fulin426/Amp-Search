@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { nextCategory } from '../actions/searchAction';
-import { NEXT_CATEGORY } from '../actions/types';
+import { nextCategory } from '../actions/actions';
+import '../index.css';
 
 class Category extends React.Component {  
 
 	nextButton = () => {
+		if (this.props.stop < 20){
 		this.props.nextCategory();
+		}
 	}
 
 	render() {
@@ -58,7 +60,7 @@ class Category extends React.Component {
       }
 
       Categories = sortedItems.map((category, index) =>
-        <li key={index}>
+        <li key={index} className="SearchResults">
           {category.text}
         </li>
       );

@@ -1,6 +1,6 @@
-import { NEXT_CATEGORY } from '../actions/types';
-
-const initialState = {
+/*import { NEXT_CATEGORY } from '../actions/types';
+*/
+/*const initialState = {
 	start: 0,
 	stop: 5 
 }
@@ -16,4 +16,4 @@ export default function(state = initialState, action) {
 		default: 
 			return state;
 	}
-}
+}*/

@@ -1,14 +1,13 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { searchJobs } from '../actions/searchAction';
-import { nextCategory } from '../actions/searchAction'
+import { searchJobs } from '../actions/actions';
 
 class SearchBar extends React.Component {
 
-/*  componentWillMount() {
+  componentWillMount() {
     let query = 'San Jose';
     this.props.searchJobs(query);
-  }*/
+  }
 
   onFormSubmit = (e) => {
     e.preventDefault();

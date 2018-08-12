@@ -1,7 +1,11 @@
 import { SEARCH_JOBS } from '../actions/types';
+import { NEXT_CATEGORY } from '../actions/types';
 
 const initialState = {
-	jobs: {}, 
+	jobs: {},
+	return: false,
+	start: 0, 
+	stop: 0
 }
 
 export default function(state = initialState, action) {
@@ -14,6 +18,12 @@ export default function(state = initialState, action) {
 				start: 0,
 				stop: 5
 			}
+		case NEXT_CATEGORY:
+			return {
+				...state,
+				start: state.start + 5,
+				stop: state.stop + 5
+			};	
 		default: 
 			return state;
 	}
