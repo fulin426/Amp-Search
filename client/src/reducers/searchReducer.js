@@ -10,7 +10,9 @@ export default function(state = initialState, action) {
 			return {
 				...state,
 				jobs: action.payload,
-				returned: true
+				returned: true,
+				start: 0,
+				stop: 5
 			}
 		default: 
 			return state;

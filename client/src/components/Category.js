@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-const start = 0;
-const stop = 5;
+import { nextCategory } from '../actions/searchAction';
+import { NEXT_CATEGORY } from '../actions/types';
 
-class Category extends Component {  
+class Category extends React.Component {  
 
 	nextButton = () => {
-		start += 5;
-		stop += 5 ;
-
-		console.log(start);
-		console.log(stop);
+		this.props.nextCategory();
 	}
 
 	render() {
@@ -50,7 +46,10 @@ class Category extends Component {
       sortable.sort(function(a,b) {
       return b[1]-a[1];
       });
-      
+
+      let start = this.props.start;
+      let stop = this.props.stop;
+
       let slicedSortable = sortable.slice(start, stop);
       let sortedItems = [];
 
@@ -81,7 +80,9 @@ class Category extends Component {
 }
 
 const mapStateToProps = state => ({
-  jobs: state.jobs
+  jobs: state.jobs,
+  start: state.jobs.start,
+  stop: state.jobs.stop
 });
 
-export default connect(mapStateToProps)(Category);
+export default connect(mapStateToProps, { nextCategory })(Category);

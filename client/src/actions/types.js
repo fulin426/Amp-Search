@@ -1,1 +1,2 @@
 export const SEARCH_JOBS = 'SEARCH_JOBS';
+export const NEXT_CATEGORY = 'NEXT_CATEGORY';
