@@ -17,12 +17,13 @@ class Category extends React.Component {
 
 	addCategory = (e) => {
 		this.props.addCategory(e.target.dataset.id);
-    this.props.returnedCategories(test);
+    this.props.returnedCategories(this.refs.initialList.id.split(','));
 	}
 
 	render() {
 	const returned = this.props.jobs.returned;
   let Categories;
+  let initialList = [];
 
   if (returned === true) {
   	let items = this.props.jobs.jobs.rss.channel.item
@@ -62,7 +63,6 @@ class Category extends React.Component {
 
     let slicedSortable = sortable.slice(start, stop);
 
-    let initialList = [];
     for (let i=0; i<sortable.slice(0,20).length; i++){
       initialList.push(sortable.slice(0,20)[i][0]);
     }
@@ -74,7 +74,7 @@ class Category extends React.Component {
 
     Categories = sortedItems.map((category, index) =>
       <li key={index} 
-      	className="SearchResults"
+      	className="Results"
       	onClick={this.addCategory}
       	data-id={category.text}
       >
@@ -86,7 +86,7 @@ class Category extends React.Component {
   if (this.props.returned) { 
 		return (
 			<div>
-				<h3>Do you have these skills?</h3>
+				<h3 id={initialList} ref="initialList">Do you have these skills?</h3>
 				<ul>{Categories}</ul>
 				<button onClick={this.nextButton}>
 				Next

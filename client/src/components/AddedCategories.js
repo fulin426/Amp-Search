@@ -5,7 +5,10 @@ class AddedCategories extends Component {
 
 	render() {
 		const displayCategories = this.props.addedCategories.map((category, index) =>
-			<li key={index}>
+			<li 
+				key={index}
+				className="Results"
+			>
 				{category}
 			</li>
 		);
