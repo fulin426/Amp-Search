@@ -3,10 +3,11 @@ import { NEXT_CATEGORY } from '../actions/types';
 import { ADD_CATEGORY } from '../actions/types';
 import { SET_RETURNED_CATEGORIES } from '../actions/types';
 import { DELETE_CATEGORY } from '../actions/types';
-
+import { SET_NOTADDED_CATEGORIES } from '../actions/types';
 
 const initialState = {
 	jobs: {},
+	returnedCategories: [],
 	addedCategories: [],
 	NotAddedCategories: [], 
 	returned: false,
@@ -30,10 +31,17 @@ export default function(state = initialState, action) {
 				start: state.start + 5,
 				stop: state.stop + 5
 			};
+		case SET_NOTADDED_CATEGORIES:
+			let addedArry = state.returnedCategories;
+			let toRemove = state.addedCategories;
+			return {
+				...state,
+				NotAddedCategories: addedArry.filter(item => !toRemove.includes(item)),
+			};		
 		case SET_RETURNED_CATEGORIES:
 			return {
 				...state,
-				NotAddedCategories: action.NotAddedCategories,
+				returnedCategories: action.returnedCategories,
 			};	
 		case ADD_CATEGORY:
 			const check = (category, arry) => {
@@ -43,8 +51,8 @@ export default function(state = initialState, action) {
 				return arry.concat(category);
 				}
 			}
-			const arry = state.addedCategories;
-			const category = action.newCategory;
+			let arry = state.addedCategories;
+			let category = action.newCategory;
 			return {
 				...state,
 				addedCategories: check(category, arry),

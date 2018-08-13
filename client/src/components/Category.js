@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { nextCategory } from '../actions/actions';
 import { addCategory } from '../actions/actions';
 import { returnedCategories } from '../actions/actions';
+import { setNotAddedCategories } from '../actions/actions';
 
 import '../index.css';
 
@@ -17,6 +18,7 @@ class Category extends React.Component {
 
 	addCategory = (e) => {
 		this.props.addCategory(e.target.dataset.id);
+    this.props.setNotAddedCategories(e.target.dataset.id);
     this.props.returnedCategories(this.refs.initialList.id.split(','));
 	}
 
@@ -109,4 +111,9 @@ const mapStateToProps = state => ({
   returned: state.jobs.returned
 });
 
-export default connect(mapStateToProps, { nextCategory, addCategory, returnedCategories })(Category);
+export default connect(mapStateToProps, { 
+  nextCategory, 
+  addCategory, 
+  returnedCategories, 
+  setNotAddedCategories 
+  })(Category);

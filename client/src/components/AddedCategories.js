@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteCategory } from '../actions/actions';
 
+
 class AddedCategories extends Component {
 
 	deleteCategory = (e) => {
