@@ -2,6 +2,8 @@ import { SEARCH_JOBS } from '../actions/types';
 import { NEXT_CATEGORY } from '../actions/types';
 import { ADD_CATEGORY } from '../actions/types';
 import { SET_RETURNED_CATEGORIES } from '../actions/types';
+import { DELETE_CATEGORY } from '../actions/types';
+
 
 const initialState = {
 	jobs: {},
@@ -43,11 +45,15 @@ export default function(state = initialState, action) {
 			}
 			const arry = state.addedCategories;
 			const category = action.newCategory;
-			
 			return {
 				...state,
 				addedCategories: check(category, arry),
 			};
+		case DELETE_CATEGORY:
+			return {
+				...state,
+				addedCategories: state.addedCategories.filter(item => item !== action.deleteCategory),
+			};		
 		default: 
 			return state;
 	}

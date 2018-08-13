@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deleteCategory } from '../actions/actions';
 
 class AddedCategories extends Component {
+
+	deleteCategory = (e) => {
+		this.props.deleteCategory(e.target.dataset.id);
+	}
 
 	render() {
 		const displayCategories = this.props.addedCategories.map((category, index) =>
 			<li 
 				key={index}
 				className="Results"
+				data-id={category}
+				onClick={this.deleteCategory}
 			>
 				{category}
 			</li>
@@ -31,4 +38,4 @@ const mapStateToProps = state => ({
   returned: state.jobs.returned
 });
 
-export default connect(mapStateToProps)(AddedCategories);
+export default connect(mapStateToProps, { deleteCategory })(AddedCategories);

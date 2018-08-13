@@ -73,7 +73,8 @@ class Category extends React.Component {
     }
 
     Categories = sortedItems.map((category, index) =>
-      <li key={index} 
+      <li 
+        key={index} 
       	className="Results"
       	onClick={this.addCategory}
       	data-id={category.text}
