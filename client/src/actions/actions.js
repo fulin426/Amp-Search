@@ -4,6 +4,8 @@ import { ADD_CATEGORY } from './types';
 import { SET_RETURNED_CATEGORIES } from './types';
 import { DELETE_CATEGORY } from './types';
 import { SET_NOTADDED_CATEGORIES } from './types';
+import { DELETE_NOTADDED_CATEGORY } from './types';
+
 
 import Client from "../Client";
 
@@ -48,5 +50,12 @@ export const setNotAddedCategories = (category) => dispatch => {
 	dispatch({
 		type: SET_NOTADDED_CATEGORIES,
 		setNotAdded: category
+	});
+}
+
+export const deleteNotAddedCategory = (category) => dispatch => {
+	dispatch({
+		type: DELETE_NOTADDED_CATEGORY,
+		deleteNotAdded: category
 	});
 }

@@ -4,6 +4,7 @@ import { ADD_CATEGORY } from '../actions/types';
 import { SET_RETURNED_CATEGORIES } from '../actions/types';
 import { DELETE_CATEGORY } from '../actions/types';
 import { SET_NOTADDED_CATEGORIES } from '../actions/types';
+import { DELETE_NOTADDED_CATEGORY } from '../actions/types';
 
 const initialState = {
 	jobs: {},
@@ -61,7 +62,12 @@ export default function(state = initialState, action) {
 			return {
 				...state,
 				addedCategories: state.addedCategories.filter(item => item !== action.deleteCategory),
-			};		
+			};
+		case DELETE_NOTADDED_CATEGORY:
+			return {
+				...state,
+				NotAddedCategories: state.NotAddedCategories.filter(item => item !== action.deleteNotAdded),
+			};				
 		default: 
 			return state;
 	}

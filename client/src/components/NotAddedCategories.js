@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setNotAdded } from '../actions/actions';
+import { deleteNotAddedCategory } from '../actions/actions';
+import { addCategory } from '../actions/actions';
 
 class NotAddedCategories extends Component {
 	
-	setNotAdded = (e) => {
-		console.log("test");
+	deleteCategory = (e) => {
+		this.props.deleteNotAddedCategory(e.target.dataset.id);
+		this.props.addCategory(e.target.dataset.id);
 	}
 
 	render() {
@@ -14,7 +17,7 @@ class NotAddedCategories extends Component {
 			key={index}
 			data-id={category}
 			className="Results"
-			onClick={this.setNotAdded}
+			onClick={this.deleteCategory}
 		>
 			{category}
 		</li>
@@ -33,4 +36,4 @@ const mapStateToProps = state => ({
   notAdded: state.jobs.NotAddedCategories,
 });
 
-export default connect(mapStateToProps, { setNotAdded })(NotAddedCategories);
+export default connect(mapStateToProps, { addCategory, deleteNotAddedCategory })(NotAddedCategories);

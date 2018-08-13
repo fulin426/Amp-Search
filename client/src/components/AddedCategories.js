@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteCategory } from '../actions/actions';
+import { setNotAddedCategories } from '../actions/actions';
 
 
 class AddedCategories extends Component {
 
 	deleteCategory = (e) => {
 		this.props.deleteCategory(e.target.dataset.id);
+		this.props.setNotAddedCategories();
 	}
 
 	render() {
@@ -39,4 +41,4 @@ const mapStateToProps = state => ({
   returned: state.jobs.returned
 });
 
-export default connect(mapStateToProps, { deleteCategory })(AddedCategories);
+export default connect(mapStateToProps, { deleteCategory, setNotAddedCategories})(AddedCategories);

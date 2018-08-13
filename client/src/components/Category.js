@@ -18,7 +18,7 @@ class Category extends React.Component {
 
 	addCategory = (e) => {
 		this.props.addCategory(e.target.dataset.id);
-    this.props.setNotAddedCategories(e.target.dataset.id);
+    this.props.setNotAddedCategories();
     this.props.returnedCategories(this.refs.initialList.id.split(','));
 	}
 
