@@ -6,6 +6,7 @@ import './index.css'
 import Categories from "./components/Category";
 import SearchBar from "./components/SearchBar";
 import AddedCategories from "./components/AddedCategories";
+import NotAddedCategories from "./components/NotAddedCategories";
 
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
           <SearchBar />
           <Categories />
           <AddedCategories />
+          <NotAddedCategories />
         </div>
       </Provider>     
     );

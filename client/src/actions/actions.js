@@ -1,6 +1,7 @@
 import { SEARCH_JOBS } from './types';
 import { NEXT_CATEGORY } from './types';
 import { ADD_CATEGORY } from './types';
+import { SET_RETURNED_CATEGORIES } from './types';
 
 import Client from "../Client";
 
@@ -23,6 +24,13 @@ export const nextCategory = () => dispatch => {
 export const addCategory = (category) => dispatch => {
 	dispatch({
 		type: ADD_CATEGORY,
-		new_category: category
+		newCategory: category
+	});
+}
+
+export const returnedCategories = (category) => dispatch => {
+	dispatch({
+		type: SET_RETURNED_CATEGORIES,
+		NotAddedCategories: category
 	});
 }
