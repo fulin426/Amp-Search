@@ -5,12 +5,14 @@ import { SET_RETURNED_CATEGORIES } from '../actions/types';
 import { DELETE_CATEGORY } from '../actions/types';
 import { SET_NOTADDED_CATEGORIES } from '../actions/types';
 import { DELETE_NOTADDED_CATEGORY } from '../actions/types';
+import { SET_RESULTS } from '../actions/types';
 
 const initialState = {
 	jobs: {},
 	returnedCategories: [],
 	addedCategories: [],
-	NotAddedCategories: [], 
+	NotAddedCategories: [],
+	setResults: [],
 	returned: false,
 	start: 0, 
 	stop: 0
@@ -67,6 +69,11 @@ export default function(state = initialState, action) {
 			return {
 				...state,
 				NotAddedCategories: state.NotAddedCategories.filter(item => item !== action.deleteNotAdded),
+			};	
+		case SET_RESULTS:
+			return {
+				...state,
+				setResults: action.setResults,
 			};				
 		default: 
 			return state;

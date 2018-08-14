@@ -4,6 +4,8 @@ import { nextCategory } from '../actions/actions';
 import { addCategory } from '../actions/actions';
 import { returnedCategories } from '../actions/actions';
 import { setNotAddedCategories } from '../actions/actions';
+import { setResults } from '../actions/actions';
+
 
 import '../index.css';
 
@@ -18,6 +20,26 @@ class Category extends React.Component {
 
   showResults = () => {
     this.props.setNotAddedCategories();
+    this.props.setResults(this.props.jobs.jobs.rss.channel.item);
+    let currentState = this.props.jobs.jobs.rss.channel.item[2].category;
+    let listedSkills = []
+    
+    currentState.forEach(item =>
+      listedSkills = listedSkills.concat(item._text)
+    );
+    let selectedSkills = this.props.jobs.addedCategories;
+    let combinedList = selectedSkills.concat(listedSkills);
+    var uniq = combinedList
+      .map((name) => {
+      return {count: 1, name: name}
+    })
+      .reduce((a, b) => {
+      a[b.name] = (a[b.name] || 0) + b.count
+      return a
+    }, {})
+    var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1)
+    console.log(duplicates.length); 
+
   }
 
 	addCategory = (e) => {
@@ -31,12 +53,14 @@ class Category extends React.Component {
   let initialList = [];
 
   if (returned === true) {
-  	let items = this.props.jobs.jobs.rss.channel.item
-    let arry = [];
+  	let items = this.props.jobs.jobs.rss.channel.item;
+    let rawResults = [];
     items.forEach(item => 
-      arry = arry.concat(item.category)
+      rawResults = rawResults.concat(item.category)
     );
-    /*San Mateo location cannot read of undefined*/
+    
+    //filter for jobs descriptions that are undefined
+    let arry = rawResults.filter(item => item !== undefined);
     let skillsObj = {};
     for (let i=0; i<arry.length; i++) {
       if (skillsObj[arry[i]._text]) {
@@ -135,5 +159,7 @@ export default connect(mapStateToProps, {
   nextCategory, 
   addCategory, 
   returnedCategories, 
-  setNotAddedCategories 
-  })(Category);
+  setNotAddedCategories, 
+  setResults 
+  })
+  (Category);

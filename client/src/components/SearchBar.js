@@ -5,7 +5,9 @@ import { searchJobs } from '../actions/actions';
 class SearchBar extends React.Component {
 
   componentWillMount() {
-    let query = 'San Jose';
+    //The Crystal Mill, Colorado, USA
+    //shows no results
+    let query = 'San Mateo';
     this.props.searchJobs(query);
   }
 

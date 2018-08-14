@@ -5,6 +5,7 @@ import { SET_RETURNED_CATEGORIES } from './types';
 import { DELETE_CATEGORY } from './types';
 import { SET_NOTADDED_CATEGORIES } from './types';
 import { DELETE_NOTADDED_CATEGORY } from './types';
+import { SET_RESULTS } from './types';
 
 
 import Client from "../Client";
@@ -57,5 +58,36 @@ export const deleteNotAddedCategory = (category) => dispatch => {
 	dispatch({
 		type: DELETE_NOTADDED_CATEGORY,
 		deleteNotAdded: category
+	});
+}
+
+export const setResults = (jobs) => dispatch => {
+	const sortedJobs = []
+	const currentState = jobs[2].category;
+
+	console.log(currentState);
+	
+	const sortCategory = (currentState) =>{
+		let listedSkills = []
+		currentState.forEach(item =>
+      listedSkills = listedSkills.concat(item._text)
+    );
+    return listedSkills;
+	}
+
+	console.log(sortCategory(currentState));
+	
+	jobs.forEach(item =>
+		sortedJobs.push({ 
+			title: item.title._text,
+			link: item.link._text,
+			location: item.location._text,
+			description: item.description._text,
+			category: item.category
+		}));
+
+	dispatch({
+		type: SET_RESULTS,
+		setResults: sortedJobs
 	});
 }

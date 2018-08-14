@@ -17,3 +17,7 @@ body {
 .Results {
 	cursor: pointer;
 }
+
+a:visted {
+  background-color: green;
+}
