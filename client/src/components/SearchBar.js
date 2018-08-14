@@ -32,7 +32,7 @@ class SearchBar extends React.Component {
           </form>
 			</div>
 		);
-	}
+	}''
 }
 
 const mapStateToProps = state => ({

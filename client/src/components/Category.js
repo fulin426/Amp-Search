@@ -11,14 +11,17 @@ import '../index.css';
 class Category extends React.Component {  
 
 	nextButton = () => {
-		if (this.props.stop < 20){
+		if (this.props.stop < 20) {
 		this.props.nextCategory();
 		}
 	}
 
+  showResults = () => {
+    this.props.setNotAddedCategories();
+  }
+
 	addCategory = (e) => {
 		this.props.addCategory(e.target.dataset.id);
-    this.props.setNotAddedCategories();
     this.props.returnedCategories(this.refs.initialList.id.split(','));
 	}
 
@@ -91,9 +94,13 @@ class Category extends React.Component {
 			<div>
 				<h3 id={initialList} ref="initialList">Do you have these skills?</h3>
 				<ul>{Categories}</ul>
-				<button onClick={this.nextButton}>
+				<button 
+        onClick={this.nextButton}>
 				Next
 				</button>
+        <button onClick={this.showResults}>
+        Show Results
+        </button>
 			</div>
 		);
 	} else {
@@ -102,6 +109,19 @@ class Category extends React.Component {
 			);
 		}
 	}
+
+/*if (this.props.stop === 20) {
+    return(
+      <button>Show Results</button>
+    );
+  } else {
+    return (
+    <button 
+      onClick={this.nextButton}>
+      Next
+    </button>
+    );
+  }*/
 }
 
 const mapStateToProps = state => ({
