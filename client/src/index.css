@@ -7,17 +7,32 @@ body {
 .App {
 	margin: auto;
   margin-top: 1em;
-  width: 90%;
+  width: 95%;
 }
 
-#food-search {
-  margin-top: 5em;
+.ResultsPage {
+	text-align: center;
+	display: inline-block;
+	height: 444px;
+}
+
+.SkillsList {
+	display: inline-block;
+}
+
+.jobResult {
+	margin-bottom: 10px;
+}
+
+.JobResults {
+	display: inline-block;
+	text-align: left;
+	overflow: scroll;
+	height: inherit;
+	width: 80%;
+	margin-left: 20px;
 }
 
 .Results {
 	cursor: pointer;
-}
-
-a:visted {
-  background-color: green;
 }

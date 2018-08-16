@@ -6,17 +6,19 @@ class JobResults extends Component {
 		
 	if (this.props.resultSet) {
 	const jobResults = this.props.results.map((listing, index) => 
-		<div key={index}>
+		<div 
+			key={index}
+			className="jobResult"
+		>
 			<a href={listing.link} target="_blank">
 				{listing.title}
 			</a>
-			<p>Categories: {listing.category}</p>
+			<p>Required Skills: {listing.category}</p>
 
 		</div>
 		);
 		return (
 			<div>
-				<h3>Jobs Results</h3>
 				<div>
 					{jobResults}
 				</div>

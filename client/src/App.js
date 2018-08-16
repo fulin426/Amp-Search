@@ -5,10 +5,7 @@ import './index.css'
 
 import Categories from "./components/Category";
 import SearchBar from "./components/SearchBar";
-import AddedCategories from "./components/AddedCategories";
-import NotAddedCategories from "./components/NotAddedCategories";
-import JobResults from "./components/JobResults";
-
+import ShowResults from "./components/ShowResults";
 class App extends React.Component {
 
   render() {
@@ -18,9 +15,7 @@ class App extends React.Component {
         <div className="App">
           <SearchBar />
           <Categories />
-          <AddedCategories />
-          <NotAddedCategories />
-          <JobResults />
+          <ShowResults />
         </div>
       </Provider>     
     );
