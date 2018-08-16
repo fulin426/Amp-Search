@@ -62,28 +62,37 @@ export const deleteNotAddedCategory = (category) => dispatch => {
 }
 
 export const setResults = (jobs) => dispatch => {
-	const sortedJobs = []
+	
 	const currentState = jobs[2].category;
-
 	console.log(currentState);
 	
-	const sortCategory = (currentState) =>{
-		let listedSkills = []
-		currentState.forEach(item =>
-      listedSkills = listedSkills.concat(item._text)
-    );
+	const sortCategory = (currentState) => {
+		let listedSkills = [];
+		for (let i=0; i<currentState.length; i++) {
+			listedSkills = listedSkills.concat(currentState[i]._text);
+		}
     return listedSkills;
 	}
-
 	console.log(sortCategory(currentState));
 	
+	let removedText = [];
+	for (let i=0; i<jobs.length; i++) {
+		removedText.push(jobs[i].category);
+	}
+
+/*	let removedText2 = [];
+	for (let i=0; i<removedText.length; i++) {
+		console.log(removedText[i]);
+	}*/
+
+	const sortedJobs = []
 	jobs.forEach(item =>
 		sortedJobs.push({ 
 			title: item.title._text,
 			link: item.link._text,
 			location: item.location._text,
 			description: item.description._text,
-			category: item.category
+			category: sortCategory(item.category)
 		}));
 
 	dispatch({

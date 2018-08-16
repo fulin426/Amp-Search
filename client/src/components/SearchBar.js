@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
   componentWillMount() {
     //The Crystal Mill, Colorado, USA
     //shows no results
-    let query = 'San Mateo';
+    let query = '94014';
     this.props.searchJobs(query);
   }
 

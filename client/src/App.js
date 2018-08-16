@@ -7,7 +7,7 @@ import Categories from "./components/Category";
 import SearchBar from "./components/SearchBar";
 import AddedCategories from "./components/AddedCategories";
 import NotAddedCategories from "./components/NotAddedCategories";
-
+import JobResults from "./components/JobResults";
 
 class App extends React.Component {
 
@@ -20,6 +20,7 @@ class App extends React.Component {
           <Categories />
           <AddedCategories />
           <NotAddedCategories />
+          <JobResults />
         </div>
       </Provider>     
     );

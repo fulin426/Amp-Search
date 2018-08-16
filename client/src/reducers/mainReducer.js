@@ -13,6 +13,7 @@ const initialState = {
 	addedCategories: [],
 	NotAddedCategories: [],
 	setResults: [],
+	resultSet: false,
 	returned: false,
 	start: 0, 
 	stop: 0
@@ -73,7 +74,8 @@ export default function(state = initialState, action) {
 		case SET_RESULTS:
 			return {
 				...state,
-				setResults: action.setResults,
+				resultSet: true,
+				setResults: action.setResults
 			};				
 		default: 
 			return state;

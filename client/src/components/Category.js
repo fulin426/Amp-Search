@@ -24,7 +24,7 @@ class Category extends React.Component {
     let currentState = this.props.jobs.jobs.rss.channel.item[2].category;
     let listedSkills = []
     
-    currentState.forEach(item =>
+/*    currentState.forEach(item =>
       listedSkills = listedSkills.concat(item._text)
     );
     let selectedSkills = this.props.jobs.addedCategories;
@@ -38,7 +38,7 @@ class Category extends React.Component {
       return a
     }, {})
     var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1)
-    console.log(duplicates.length); 
+    console.log(duplicates); */
 
   }
 
@@ -48,11 +48,10 @@ class Category extends React.Component {
 	}
 
 	render() {
-	const returned = this.props.jobs.returned;
   let Categories;
   let initialList = [];
 
-  if (returned === true) {
+  if (this.props.jobs.returned) {
   	let items = this.props.jobs.jobs.rss.channel.item;
     let rawResults = [];
     items.forEach(item => 
@@ -61,6 +60,7 @@ class Category extends React.Component {
     
     //filter for jobs descriptions that are undefined
     let arry = rawResults.filter(item => item !== undefined);
+    
     let skillsObj = {};
     for (let i=0; i<arry.length; i++) {
       if (skillsObj[arry[i]._text]) {
@@ -163,3 +163,23 @@ export default connect(mapStateToProps, {
   setResults 
   })
   (Category);
+
+/*var jobSkills = ['react','redux','aws'];
+
+var mySkills = ['python','react','aws','php'];
+
+
+var matchedSkills = [];
+
+jobSkills.forEach(function(skill){
+  if(mySkills.indexOf(skill)>=0){
+    matchedSkills.push(skill);
+  }
+});
+
+// console.log(`matched skills ${matchedSkills}`);
+// console.log(matchedSkills,matchedSkills.length);
+
+console.log(mySkills.indexOf('python'));
+console.log(mySkills.indexOf('aws'));
+console.log(mySkills.indexOf('redux'));*/
