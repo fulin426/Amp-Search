@@ -5,7 +5,12 @@ class JobResults extends Component {
 	render() {
 		
 	if (this.props.resultSet) {
-	const jobResults = this.props.results.map((listing, index) => 
+	
+	const jobSort = this.props.results.sort((a, b) => 
+		b.percentage - a.percentage
+		);
+
+	const jobResults = jobSort.map((listing, index) => 
 		<div 
 			key={index}
 			className="jobResult"
