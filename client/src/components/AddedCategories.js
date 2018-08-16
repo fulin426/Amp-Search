@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteCategory } from '../actions/actions';
 import { setNotAddedCategories } from '../actions/actions';
+import { setResults } from '../actions/actions';
 
 
 class AddedCategories extends Component {
@@ -9,6 +10,8 @@ class AddedCategories extends Component {
 	deleteCategory = (e) => {
 		this.props.deleteCategory(e.target.dataset.id);
 		this.props.setNotAddedCategories();
+    let listedSkills = this.props.addedCategories;
+    this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
 	}
 
 	render() {
@@ -38,7 +41,8 @@ class AddedCategories extends Component {
 }
 const mapStateToProps = state => ({
   addedCategories: state.jobs.addedCategories,
+  jobs: state.jobs,
   returned: state.jobs.returned
 });
 
-export default connect(mapStateToProps, { deleteCategory, setNotAddedCategories})(AddedCategories);
+export default connect(mapStateToProps, { deleteCategory, setNotAddedCategories, setResults})(AddedCategories);

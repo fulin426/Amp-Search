@@ -3,12 +3,15 @@ import { connect } from 'react-redux';
 import { setNotAdded } from '../actions/actions';
 import { deleteNotAddedCategory } from '../actions/actions';
 import { addCategory } from '../actions/actions';
+import { setResults } from '../actions/actions';
 
 class NotAddedCategories extends Component {
 	
 	deleteCategory = (e) => {
 		this.props.deleteNotAddedCategory(e.target.dataset.id);
 		this.props.addCategory(e.target.dataset.id);
+		let listedSkills = this.props.addedCategories;
+    this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
 	}
 
 	render() {
@@ -34,6 +37,9 @@ class NotAddedCategories extends Component {
 
 const mapStateToProps = state => ({
   notAdded: state.jobs.NotAddedCategories,
+  addedCategories: state.jobs.addedCategories,
+  jobs: state.jobs,
+  returned: state.jobs.returned
 });
 
-export default connect(mapStateToProps, { addCategory, deleteNotAddedCategory })(NotAddedCategories);
+export default connect(mapStateToProps, { addCategory, deleteNotAddedCategory, setResults })(NotAddedCategories);

@@ -20,26 +20,9 @@ class Category extends React.Component {
 
   showResults = () => {
     this.props.setNotAddedCategories();
-    this.props.setResults(this.props.jobs.jobs.rss.channel.item);
-    let currentState = this.props.jobs.jobs.rss.channel.item[2].category;
-    let listedSkills = []
     
-/*    currentState.forEach(item =>
-      listedSkills = listedSkills.concat(item._text)
-    );
-    let selectedSkills = this.props.jobs.addedCategories;
-    let combinedList = selectedSkills.concat(listedSkills);
-    var uniq = combinedList
-      .map((name) => {
-      return {count: 1, name: name}
-    })
-      .reduce((a, b) => {
-      a[b.name] = (a[b.name] || 0) + b.count
-      return a
-    }, {})
-    var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1)
-    console.log(duplicates); */
-
+    let listedSkills = this.props.addedCategories;
+    this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
   }
 
 	addCategory = (e) => {
@@ -152,7 +135,8 @@ const mapStateToProps = state => ({
   jobs: state.jobs,
   start: state.jobs.start,
   stop: state.jobs.stop,
-  returned: state.jobs.returned
+  returned: state.jobs.returned,
+  addedCategories: state.jobs.addedCategories
 });
 
 export default connect(mapStateToProps, { 
@@ -163,23 +147,3 @@ export default connect(mapStateToProps, {
   setResults 
   })
   (Category);
-
-/*var jobSkills = ['react','redux','aws'];
-
-var mySkills = ['python','react','aws','php'];
-
-
-var matchedSkills = [];
-
-jobSkills.forEach(function(skill){
-  if(mySkills.indexOf(skill)>=0){
-    matchedSkills.push(skill);
-  }
-});
-
-// console.log(`matched skills ${matchedSkills}`);
-// console.log(matchedSkills,matchedSkills.length);
-
-console.log(mySkills.indexOf('python'));
-console.log(mySkills.indexOf('aws'));
-console.log(mySkills.indexOf('redux'));*/
