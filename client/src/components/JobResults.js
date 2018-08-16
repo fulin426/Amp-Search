@@ -10,7 +10,7 @@ class JobResults extends Component {
 			<a href={listing.link} target="_blank">
 				{listing.title}
 			</a>
-			<p></p>
+			<p>Categories: {listing.category}</p>
 
 		</div>
 		);

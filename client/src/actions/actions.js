@@ -71,27 +71,17 @@ export const setResults = (jobs) => dispatch => {
 		for (let i=0; i<currentState.length; i++) {
 			listedSkills = listedSkills.concat(currentState[i]._text);
 		}
-    return listedSkills;
+    return listedSkills.toString().split(',').join(', ');
 	}
 	console.log(sortCategory(currentState));
 	
-	let removedText = [];
-	for (let i=0; i<jobs.length; i++) {
-		removedText.push(jobs[i].category);
-	}
-
-/*	let removedText2 = [];
-	for (let i=0; i<removedText.length; i++) {
-		console.log(removedText[i]);
-	}*/
-
 	const sortedJobs = []
 	jobs.forEach(item =>
 		sortedJobs.push({ 
 			title: item.title._text,
 			link: item.link._text,
 			location: item.location._text,
-			description: item.description._text,
+			/*description: item.description._text,*/
 			category: sortCategory(item.category)
 		}));
 
