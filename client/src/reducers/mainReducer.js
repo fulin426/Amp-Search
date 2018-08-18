@@ -74,6 +74,7 @@ export default function(state = initialState, action) {
 		case SET_RESULTS:
 			return {
 				...state,
+				returned: false,
 				resultSet: true,
 				setResults: action.setResults
 			};				

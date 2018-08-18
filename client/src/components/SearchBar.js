@@ -4,12 +4,12 @@ import { searchJobs } from '../actions/actions';
 
 class SearchBar extends React.Component {
 
-  componentWillMount() {
+/*  componentWillMount() {
     //The Crystal Mill, Colorado, USA
     //shows no results
-    let query = 'New York';
+    let query = 'Seattle';
     this.props.searchJobs(query);
-  }
+  }*/
 
   onFormSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +18,12 @@ class SearchBar extends React.Component {
   }
 
 	render() {
-		return (
+		if (this.props.resultSet === true) {
+      return (
+        <div>
+        </div>);
+    } else {
+      return (
       <div>
         <h2>Search By Region</h2>
         <br />
@@ -32,13 +37,15 @@ class SearchBar extends React.Component {
             value="Search" 
             />
           </form>
-			</div>
-		);
-	}''
+			 </div>
+		  );
+    }
+	}
 }
 
 const mapStateToProps = state => ({
-  jobs: state.jobs
+  jobs: state.jobs,
+  resultSet: state.jobs.resultSet
 });
 
 export default connect(mapStateToProps, { searchJobs })(SearchBar);

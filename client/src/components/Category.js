@@ -36,8 +36,12 @@ class Category extends React.Component {
   let Categories;
   let initialList = [];
 
-  if (this.props.jobs.returned === true) {
-  	let items = this.props.jobs.jobs.rss.channel.item;
+
+
+  if (this.props.jobs.returned === true && 
+    JSON.stringify(this.props.jobs.jobs.rss.channel).length > 550) {
+
+    let items = this.props.jobs.jobs.rss.channel.item;
     let rawResults = [];
     items.forEach(item => 
       rawResults = rawResults.concat(item.category)
@@ -98,8 +102,9 @@ class Category extends React.Component {
     );
   }
   
-  if (this.props.returned) { 
-		return (
+  if (this.props.returned === true &&
+  JSON.stringify(this.props.jobs.jobs.rss.channel).length > 550) { 
+    return (
 			<div>
 				<h3 id={initialList} ref="initialList">Do you have these skills?</h3>
 				<ul>{Categories}</ul>
@@ -112,11 +117,15 @@ class Category extends React.Component {
         </button>
 			</div>
 		);
-	} else {
+/*    } else if (this.props.returned === false) {
 		return(
-			<div></div>
-			);
-		}
+			<div>
+        <h3>Please try a different location</h3>
+      </div>
+			);*/
+		} else {
+      return(<div></div>);
+    }
 	}
 }
 
@@ -125,6 +134,7 @@ const mapStateToProps = state => ({
   start: state.jobs.start,
   stop: state.jobs.stop,
   returned: state.jobs.returned,
+  resultSet: state.jobs.resultSet,
   addedCategories: state.jobs.addedCategories
 });
 
