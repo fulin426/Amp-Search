@@ -5,8 +5,6 @@ import { addCategory } from '../actions/actions';
 import { returnedCategories } from '../actions/actions';
 import { setNotAddedCategories } from '../actions/actions';
 import { setResults } from '../actions/actions';
-
-
 import '../index.css';
 
 
@@ -38,7 +36,7 @@ class Category extends React.Component {
   let Categories;
   let initialList = [];
 
-  if (this.props.jobs.returned) {
+  if (this.props.jobs.returned === true) {
   	let items = this.props.jobs.jobs.rss.channel.item;
     let rawResults = [];
     items.forEach(item => 

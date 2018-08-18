@@ -3,16 +3,22 @@ import { connect } from 'react-redux';
 import { deleteCategory } from '../actions/actions';
 import { setNotAddedCategories } from '../actions/actions';
 import { setResults } from '../actions/actions';
-
+import { createStore } from 'redux';
+import rootReducer from '../reducers/index';
 
 class AddedCategories extends Component {
 
 	deleteCategory = (e) => {
-		this.props.deleteCategory(e.target.dataset.id);
+		let selected = e.target.dataset.id;
+
+		this.props.deleteCategory(selected);
 		this.props.setNotAddedCategories();
+    
     let listedSkills = this.props.addedCategories;
+    listedSkills = listedSkills.filter( item => item !== selected);
+
     let jobResults = this.props.jobs.jobs.rss.channel.item
-		setTimeout(()=>{this.props.setResults(jobResults, listedSkills);}, 1000)
+		this.props.setResults(jobResults, listedSkills);	
 	}
 
 	render() {

@@ -8,10 +8,16 @@ import { setResults } from '../actions/actions';
 class NotAddedCategories extends Component {
 	
 	deleteCategory = (e) => {
-		this.props.deleteNotAddedCategory(e.target.dataset.id);
-		this.props.addCategory(e.target.dataset.id);
-		let listedSkills = this.props.addedCategories;
-    this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
+		let selected = e.target.dataset.id;
+		
+		this.props.deleteNotAddedCategory(selected);
+		this.props.addCategory(selected);
+		
+    let listedSkills = this.props.addedCategories;
+    listedSkills.push(selected);
+
+    let jobResults = this.props.jobs.jobs.rss.channel.item
+		this.props.setResults(jobResults, listedSkills);	
 	}
 
 	render() {

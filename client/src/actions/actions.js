@@ -62,15 +62,15 @@ export const deleteNotAddedCategory = (category) => dispatch => {
 }
 
 export const setResults = (jobs, mySkills) => dispatch => {
-	
-	const matchedSkills = [];
 
 	const sortPercentage = (currentState, mySkills) => {
 		let listedSkills = [];
 		for (let i=0; i<currentState.length; i++) {
 			listedSkills = listedSkills.concat(currentState[i]._text);
 		}
+    
     let matchedSkills =[];
+    
     listedSkills.forEach(skill => {
   		if(mySkills.indexOf(skill)>=0)	{
    			matchedSkills.push(skill);
@@ -100,15 +100,6 @@ export const setResults = (jobs, mySkills) => dispatch => {
 			});
 		}
 	}
-
-/*	jobs.forEach(item =>
-		sortedJobs.push({ 
-			title: item.title._text,
-			link: item.link._text,
-			location: item.location._text,
-			category: sortCategory(item.category),
-			percentage: sortPercentage(item.category, mySkills)
-		}));*/
 
 	dispatch({
 		type: SET_RESULTS,
