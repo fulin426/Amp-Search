@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class JobResults extends Component {
-	render() {
-		
-	if (this.props.resultSet) {
 	
-	const jobSort = this.props.results.sort((a, b) => 
+	render() {	
+	
+	let jobSort = this.props.results.sort((a, b) => 
 		b.percentage - a.percentage
 		);
+
+	jobSort = jobSort.filter(item => item.category !== "" );
+	jobSort = jobSort.filter(item => item.percentage !== 0 );
+	console.log(jobSort);
 
 	const jobResults = jobSort.map((listing, index) => 
 		<div 
@@ -22,8 +25,10 @@ class JobResults extends Component {
 			<p>Percentage Match: {listing.percentage}%</p>
 		</div>
 		);
+	if (this.props.resultSet === true) {
 		return (
 			<div>
+			<h3>Jobs Results</h3>
 				<div>
 					{jobResults}
 				</div>
@@ -31,7 +36,9 @@ class JobResults extends Component {
 		);
 		} else {
 			return (
-				<div></div>
+				<div>
+					
+				</div>
 			);
 		}
 	}

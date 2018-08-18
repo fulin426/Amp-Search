@@ -63,7 +63,6 @@ export const deleteNotAddedCategory = (category) => dispatch => {
 
 export const setResults = (jobs, mySkills) => dispatch => {
 	
-	const currentState = jobs[2].category;
 	const matchedSkills = [];
 
 	const sortPercentage = (currentState, mySkills) => {
@@ -77,11 +76,9 @@ export const setResults = (jobs, mySkills) => dispatch => {
    			matchedSkills.push(skill);
   		}
 		});
-    return (matchedSkills.length/currentState.length)*100;
+    return Math.round((matchedSkills.length/currentState.length)*100);
 	}
-	console.log(currentState);
-	console.log(sortPercentage(currentState, mySkills));
-	
+
 	const sortCategory = (currentState) => {
 		let listedSkills = [];
 		for (let i=0; i<currentState.length; i++) {

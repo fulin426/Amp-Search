@@ -15,7 +15,7 @@ class NotAddedCategories extends Component {
 	}
 
 	render() {
-	const notAdded = this.props.notAdded.map((category, index) => 
+		const notAdded = this.props.notAdded.map((category, index) => 
 		<li 
 			key={index}
 			data-id={category}
@@ -25,13 +25,18 @@ class NotAddedCategories extends Component {
 			{category}
 		</li>
 		);
-
+	if (this.props.resultSet === true) {
 		return (
 			<div>
 				<h3>Skills You Don't Have</h3>
 				<ul>{notAdded}</ul>
 			</div>
 		);
+	} else {
+			return(
+				<div></div>
+			);
+		}
 	}
 }
 
@@ -39,7 +44,8 @@ const mapStateToProps = state => ({
   notAdded: state.jobs.NotAddedCategories,
   addedCategories: state.jobs.addedCategories,
   jobs: state.jobs,
-  returned: state.jobs.returned
+  returned: state.jobs.returned,
+  resultSet: state.jobs.resultSet
 });
 
 export default connect(mapStateToProps, { addCategory, deleteNotAddedCategory, setResults })(NotAddedCategories);

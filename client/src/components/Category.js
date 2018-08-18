@@ -20,7 +20,6 @@ class Category extends React.Component {
 
   showResults = () => {
     this.props.setNotAddedCategories();
-    
     let listedSkills = this.props.addedCategories;
     this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
   }
@@ -28,7 +27,12 @@ class Category extends React.Component {
 	addCategory = (e) => {
 		this.props.addCategory(e.target.dataset.id);
     this.props.returnedCategories(this.refs.initialList.id.split(','));
+
+    let el = document.querySelector('.Results');
+    el.classList.toggle('toggle-selected');
 	}
+
+
 
 	render() {
   let Categories;

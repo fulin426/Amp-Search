@@ -11,7 +11,8 @@ class AddedCategories extends Component {
 		this.props.deleteCategory(e.target.dataset.id);
 		this.props.setNotAddedCategories();
     let listedSkills = this.props.addedCategories;
-    this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
+    let jobResults = this.props.jobs.jobs.rss.channel.item
+		setTimeout(()=>{this.props.setResults(jobResults, listedSkills);}, 1000)
 	}
 
 	render() {
@@ -25,7 +26,7 @@ class AddedCategories extends Component {
 				{category}
 			</li>
 		);
-		if (this.props.returned) {
+		if (this.props.resultSet === true) {
 			return (
 				<div>
 					<h3>Skills You Know</h3>
@@ -42,7 +43,8 @@ class AddedCategories extends Component {
 const mapStateToProps = state => ({
   addedCategories: state.jobs.addedCategories,
   jobs: state.jobs,
-  returned: state.jobs.returned
+  returned: state.jobs.returned,
+  resultSet: state.jobs.resultSet
 });
 
 export default connect(mapStateToProps, { deleteCategory, setNotAddedCategories, setResults})(AddedCategories);

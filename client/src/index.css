@@ -29,10 +29,14 @@ body {
 	text-align: left;
 	overflow: scroll;
 	height: inherit;
-	width: 80%;
+	width: 70%;
 	margin-left: 20px;
 }
 
 .Results {
 	cursor: pointer;
+}
+
+.toggle-selected {
+	background-color: green;
 }

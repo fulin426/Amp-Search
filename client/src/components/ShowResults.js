@@ -8,7 +8,6 @@ const Showresults = React.createClass({
 	render() {
 		return (
 			<div className="ResultsPage">
-				<h3>Jobs Results</h3>
 				<div className="SkillsList"> 
 					<AddedCategories />
 					<NotAddedCategories />
