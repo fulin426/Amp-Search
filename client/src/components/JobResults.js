@@ -11,7 +11,6 @@ class JobResults extends Component {
 
 	jobSort = jobSort.filter(item => item.category !== "" );
 	jobSort = jobSort.filter(item => item.percentage !== 0 );
-	console.log(jobSort);
 
 	const jobResults = jobSort.map((listing, index) => 
 		<div 

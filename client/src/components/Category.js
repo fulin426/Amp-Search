@@ -120,19 +120,6 @@ class Category extends React.Component {
 			);
 		}
 	}
-
-/*if (this.props.stop === 20) {
-    return(
-      <button>Show Results</button>
-    );
-  } else {
-    return (
-    <button 
-      onClick={this.nextButton}>
-      Next
-    </button>
-    );
-  }*/
 }
 
 const mapStateToProps = state => ({

@@ -88,14 +88,27 @@ export const setResults = (jobs, mySkills) => dispatch => {
 	}
 	
 	const sortedJobs = []
-	jobs.forEach(item =>
+	
+	for (let i=0; i<jobs.length; i++) {
+		if (jobs[i].category !== undefined) {
+			sortedJobs.push({
+				title: jobs[i].title._text,
+				link: jobs[i].link._text,
+				location: jobs[i].location._text,
+				category: sortCategory(jobs[i].category),
+				percentage: sortPercentage(jobs[i].category, mySkills)
+			});
+		}
+	}
+
+/*	jobs.forEach(item =>
 		sortedJobs.push({ 
 			title: item.title._text,
 			link: item.link._text,
 			location: item.location._text,
 			category: sortCategory(item.category),
 			percentage: sortPercentage(item.category, mySkills)
-		}));
+		}));*/
 
 	dispatch({
 		type: SET_RESULTS,
