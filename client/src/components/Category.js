@@ -114,7 +114,7 @@ class Category extends React.Component {
       this.props.jobs.jobs.rss.channel['os:totalResults']._text == 0 ) {
       return(
       <div>
-      <p>Did not match any jobs. Please try searching a different location</p>
+        <p>Did not match any jobs. Please try searching a different location</p>
       </div>);
     } else {
       return(null);

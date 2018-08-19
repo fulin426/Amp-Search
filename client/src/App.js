@@ -2,6 +2,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import './index.css'
+import { icon, library } from '@fortawesome/fontawesome-svg-core'
+import { faClipboardList, faChartPie, faChartLine } from '@fortawesome/free-solid-svg-icons'
+library.add(faClipboardList, faChartPie, faChartLine)
 
 import Categories from "./components/Category";
 import SearchBar from "./components/SearchBar";

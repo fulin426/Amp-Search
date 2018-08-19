@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { searchJobs } from '../actions/actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChartLine } from '@fortawesome/free-solid-svg-icons'
 
 class SearchBar extends React.Component {
 
@@ -20,26 +22,49 @@ class SearchBar extends React.Component {
 
 	render() {
 		if (this.props.resultSet === true) {
-      return (
-        <div>
-        </div>);
+      return (null);
     } else {
       return (
       <div>
-        <h2>Stack Overflow Jobs</h2>
-        <br />
-        <p>Search by City or Zipcode</p>
-        <form onSubmit={this.onFormSubmit}>
-          <input
-            placeholder='Search'
-            ref='zipcode'
-          />
-          <input 
-            type="submit" 
-            value="Search" 
-          />
-          </form>
-			 </div>
+        <div className='Landing-Div'>
+        </div>  
+        <div className="SearchBar-Container">
+          
+          <h2>Stack Overflow Jobs</h2>
+          <br />
+          <p>Search by City</p>
+          <form onSubmit={this.onFormSubmit}>
+            <input
+              className="Search-Input"
+              placeholder='Search'
+              ref='zipcode'
+            />
+            <input
+              className="Search-Button" 
+              type="submit" 
+              value="Search" 
+            />
+            </form>
+            <ul>
+              <li>
+                <p>
+                  <FontAwesomeIcon icon="chart-line" size="3x" />
+                  Discover which technologies are in demand based on city
+                </p>
+              </li>
+              <li>
+                <p>
+                 <FontAwesomeIcon icon="chart-pie" size="3x" />
+                  Find jobs based on how well they are matched to your skillset
+                </p>
+              </li>
+              <li>
+              <FontAwesomeIcon icon="clipboard-list" size="3x" />
+              Assess which technologies to learn in order to qualify for more jobs
+              </li>
+            </ul>
+  			 </div>
+       </div>
 		  );
     }
 	}
