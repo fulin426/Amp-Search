@@ -29,14 +29,10 @@ class Category extends React.Component {
     let el = document.querySelector('.Results');
     el.classList.toggle('toggle-selected');
 	}
-
-
-
+  
 	render() {
   let Categories;
   let initialList = [];
-
-
 
   if (this.props.jobs.returned === true && 
     JSON.stringify(this.props.jobs.jobs.rss.channel).length > 550) {

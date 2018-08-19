@@ -5,7 +5,13 @@ import NotAddedCategories from "./NotAddedCategories";
 import JobResults from "./JobResults";
 import '../index.css'
 
-const Showresults = React.createClass({
+class Showresults extends React.Component {
+
+	startOver = (e) => {
+		e.preventDefault();
+		location.reload();
+	}
+	
 	render() {
 		if (this.props.resultSet === true) {
 		return (
@@ -17,6 +23,10 @@ const Showresults = React.createClass({
 				<div className="JobResults">
 					<JobResults />
 				</div>
+				<button 
+					onClick={this.startOver}
+				>Start Over
+				</button>
 			</div>
 		);
 		} else {
@@ -26,7 +36,7 @@ const Showresults = React.createClass({
 			);
 		}
 	}
-});
+}
 
 const mapStateToProps = state => ({
   resultSet: state.jobs.resultSet

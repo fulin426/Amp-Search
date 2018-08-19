@@ -11,6 +11,7 @@ class JobResults extends Component {
 
 	jobSort = jobSort.filter(item => item.category !== "" );
 	jobSort = jobSort.filter(item => item.percentage !== 0 );
+	jobSort = jobSort.filter(item => item.percentage > 25 );
 
 	const jobResults = jobSort.map((listing, index) => 
 		<div 
@@ -27,7 +28,7 @@ class JobResults extends Component {
 	if (this.props.resultSet === true) {
 		return (
 			<div>
-			<h3>Jobs Results</h3>
+			<h3>Jobs Results ({jobResults.length})</h3>
 				<div>
 					{jobResults}
 				</div>

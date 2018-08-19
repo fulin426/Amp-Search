@@ -4,17 +4,20 @@ import { searchJobs } from '../actions/actions';
 
 class SearchBar extends React.Component {
 
-/*  componentWillMount() {
+  componentWillMount() {
     //The Crystal Mill, Colorado, USA
     //shows no results
     let query = 'Seattle';
     this.props.searchJobs(query);
-  }*/
+  }
+
+  /*['os:results']*/
 
   onFormSubmit = (e) => {
     e.preventDefault();
     let query = this.refs.zipcode.value;
     this.props.searchJobs(query);
+    this.refs.zipcode.value = '';
   }
 
 	render() {
@@ -25,17 +28,18 @@ class SearchBar extends React.Component {
     } else {
       return (
       <div>
-        <h2>Search By Region</h2>
+        <h2>Stack Overflow Jobs</h2>
         <br />
+        <p>Search by City or Zipcode</p>
         <form onSubmit={this.onFormSubmit}>
           <input
-            placeholder='Enter Zipcode'
+            placeholder='Search'
             ref='zipcode'
           />
           <input 
             type="submit" 
             value="Search" 
-            />
+          />
           </form>
 			 </div>
 		  );
