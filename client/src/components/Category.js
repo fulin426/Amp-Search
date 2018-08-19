@@ -5,6 +5,7 @@ import { addCategory } from '../actions/actions';
 import { returnedCategories } from '../actions/actions';
 import { setNotAddedCategories } from '../actions/actions';
 import { setResults } from '../actions/actions';
+
 import '../index.css';
 
 
@@ -35,7 +36,7 @@ class Category extends React.Component {
   let initialList = [];
 
   if (this.props.jobs.returned === true && 
-    JSON.stringify(this.props.jobs.jobs.rss.channel).length > 550) {
+    this.props.jobs.jobs.rss.channel['os:totalResults']._text > 0) {
 
     let items = this.props.jobs.jobs.rss.channel.item;
     let rawResults = [];
@@ -95,11 +96,7 @@ class Category extends React.Component {
       >
         {category.text}
       </li>
-    );
-  }
-  
-  if (this.props.returned === true &&
-  JSON.stringify(this.props.jobs.jobs.rss.channel).length > 550) { 
+    ); 
     return (
 			<div>
 				<h3 id={initialList} ref="initialList">Do you have these skills?</h3>
@@ -113,16 +110,16 @@ class Category extends React.Component {
         </button>
 			</div>
 		);
-/*    } else if (this.props.returned === false) {
-		return(
-			<div>
-        <h3>Please try a different location</h3>
-      </div>
-			);*/
-		} else {
-      return(<div></div>);
+		} else if (this.props.jobs.returned === true &&
+      this.props.jobs.jobs.rss.channel['os:totalResults']._text == 0 ) {
+      return(
+      <div>
+      <p>Did not match any jobs. Please try searching a different location</p>
+      </div>);
+    } else {
+      return(null);
     }
-	}
+  }
 }
 
 const mapStateToProps = state => ({

@@ -4,14 +4,12 @@ import { searchJobs } from '../actions/actions';
 
 class SearchBar extends React.Component {
 
-  componentWillMount() {
+/*  componentWillMount() {
     //The Crystal Mill, Colorado, USA
     //shows no results
-    let query = 'Seattle';
+    let query = '';
     this.props.searchJobs(query);
-  }
-
-  /*['os:results']*/
+  }*/
 
   onFormSubmit = (e) => {
     e.preventDefault();

@@ -40,9 +40,7 @@ class AddedCategories extends Component {
 				</div>
 			);
 		} else {
-			return(
-				<div></div>
-			);
+			return(null);
 		}
 	}
 }

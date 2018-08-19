@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 .App {
 	margin: auto;
   margin-top: 1em;
