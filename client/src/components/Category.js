@@ -5,9 +5,9 @@ import { addCategory } from '../actions/actions';
 import { returnedCategories } from '../actions/actions';
 import { setNotAddedCategories } from '../actions/actions';
 import { setResults } from '../actions/actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../index.css';
-
 
 class Category extends React.Component {  
 
@@ -27,8 +27,8 @@ class Category extends React.Component {
 		this.props.addCategory(e.target.dataset.id);
     this.props.returnedCategories(this.refs.initialList.id.split(','));
 
-    let el = document.querySelector('.Results');
-    el.classList.toggle('toggle-selected');
+/*    let el = document.querySelector('.Results');
+    el.classList.toggle('toggle-selected');*/
 	}
   
 	render() {
@@ -88,27 +88,42 @@ class Category extends React.Component {
     }
 
     Categories = sortedItems.map((category, index) =>
-      <li 
-        key={index} 
-      	className="Results"
-      	onClick={this.addCategory}
-      	data-id={category.text}
-      >
-        {category.text}
-      </li>
+      <div key={index} className="Category-Item">
+        <FontAwesomeIcon className="icon" icon="plus-circle" size="1x" />
+        <li 
+          key={category.text} 
+        	className="Category-Results"
+        	onClick={this.addCategory}
+        	data-id={category.text}
+        >
+          {category.text}
+        </li>
+      </div>
     ); 
     return (
 			<div>
-				<h3 id={initialList} ref="initialList">Do you have these skills?</h3>
-				<ul>{Categories}</ul>
-				<button 
-        onClick={this.nextButton}>
-				Next
-				</button>
-        <button onClick={this.showResults}>
-        Show Results
-        </button>
+        <div className='Landing-Div'>
+        </div>  
+        <div className="SearchBar-Container">
+				  <h2 
+            id={initialList} 
+            ref="initialList"
+            className="Title"
+          >Do you have these skills?</h2>
+				  <div className="Category-Container">
+            <ul>
+              {Categories}
+            </ul> 
+				  <button 
+            onClick={this.nextButton}>
+				    Next
+				  </button>
+          <button onClick={this.showResults}>
+          Show Results
+          </button>
+        </div>   
 			</div>
+    </div>
 		);
 		} else if (this.props.jobs.returned === true &&
       this.props.jobs.jobs.rss.channel['os:totalResults']._text == 0 ) {

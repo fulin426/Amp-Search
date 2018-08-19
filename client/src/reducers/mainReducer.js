@@ -27,13 +27,13 @@ export default function(state = initialState, action) {
 				jobs: action.payload,
 				returned: true,
 				start: 0,
-				stop: 5
+				stop: 10
 			}
 		case NEXT_CATEGORY:
 			return {
 				...state,
-				start: state.start + 5,
-				stop: state.stop + 5
+				start: state.start + 10,
+				stop: state.stop + 10
 			};
 		case SET_NOTADDED_CATEGORIES:
 			let addedArry = state.returnedCategories;

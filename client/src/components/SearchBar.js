@@ -1,17 +1,16 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { searchJobs } from '../actions/actions';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChartLine } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class SearchBar extends React.Component {
 
-/*  componentWillMount() {
+  componentWillMount() {
     //The Crystal Mill, Colorado, USA
     //shows no results
-    let query = '';
+    let query = 'Dallas';
     this.props.searchJobs(query);
-  }*/
+  }
 
   onFormSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +28,6 @@ class SearchBar extends React.Component {
         <div className='Landing-Div'>
         </div>  
         <div className="SearchBar-Container">
-          
           <h2 className="Title">Stack Overflow Jobs</h2>
           <br />
           <p className="Search-Header">Search by City</p>

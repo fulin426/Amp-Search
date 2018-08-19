@@ -13,9 +13,9 @@ ul {
 .SearchBar-Container {
 	border: solid black 1px;
 	max-width: 550px;
-	height: 440px;
+	height: 460px;
 	margin: 0px auto;
-	padding: 16px;
+	padding: 26px;
 }
 
 .Title {
@@ -23,7 +23,7 @@ ul {
 }
 
 .Landing-Div{
-	height: 160px;
+	height: 135px;
 }
 
 .Search-Header {
@@ -61,11 +61,29 @@ ul {
 	margin-left: 12px;
 	font-size: 16px;
 }
+/*Do you have these skills?*/
+.Category-Container {
+	margin: 0px auto;
+	max-width: 190px;
+	text-align: left;
+}
+
+.Category-Item {
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.Category-Results {
+	display: inline-block;
+	margin-left: 8px;
+	font-size: 16px;
+}
 
 .App {
 	margin: auto;
   margin-top: 1em;
   width: 95%;
+  height: 95%;
 }
 
 .ResultsPage {
@@ -91,10 +109,13 @@ ul {
 	margin-left: 20px;
 }
 
-.Results {
-	cursor: pointer;
-}
-
 .toggle-selected {
 	background-color: green;
+}
+
+@media only screen and (min-width: 640px) {
+
+	.Landing-Div	{
+		height: 160px;
+	}
 }
