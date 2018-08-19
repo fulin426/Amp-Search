@@ -30,9 +30,9 @@ class SearchBar extends React.Component {
         </div>  
         <div className="SearchBar-Container">
           
-          <h2>Stack Overflow Jobs</h2>
+          <h2 className="Title">Stack Overflow Jobs</h2>
           <br />
-          <p>Search by City</p>
+          <p className="Search-Header">Search by City</p>
           <form onSubmit={this.onFormSubmit}>
             <input
               className="Search-Input"
@@ -42,25 +42,28 @@ class SearchBar extends React.Component {
             <input
               className="Search-Button" 
               type="submit" 
-              value="Search" 
+              value="Search"
+              role="search" 
             />
             </form>
             <ul>
-              <li>
-                <p>
-                  <FontAwesomeIcon icon="chart-line" size="3x" />
-                  Discover which technologies are in demand based on city
-                </p>
+              <li className="App-Description">
+                <FontAwesomeIcon icon="chart-line" size="3x" />
+                <span className="App-Description-Line">
+                Discover which technologies are in demand based on city
+                </span>
               </li>
-              <li>
-                <p>
-                 <FontAwesomeIcon icon="chart-pie" size="3x" />
+              <li className="App-Description">
+                <FontAwesomeIcon icon="chart-pie" size="3x" />
+                <span className="App-Description-Line">
                   Find jobs based on how well they are matched to your skillset
-                </p>
+                </span>
               </li>
-              <li>
-              <FontAwesomeIcon icon="clipboard-list" size="3x" />
-              Assess which technologies to learn in order to qualify for more jobs
+              <li className="App-Description">
+                <FontAwesomeIcon icon="clipboard-list" size="3x" />
+                <span className="App-Description-Line">
+                  Assess which technologies to learn in order to qualify for more jobs
+                </span>
               </li>
             </ul>
   			 </div>
