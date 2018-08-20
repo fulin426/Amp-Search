@@ -12,8 +12,8 @@ ul {
 /*Landing Page*/
 .SearchBar-Container {
 	border: solid black 1px;
-	max-width: 550px;
-	height: 460px;
+	max-width: 580px;
+	height: 490px;
 	margin: 0px auto;
 	padding: 26px;
 }
@@ -79,6 +79,22 @@ ul {
 	font-size: 16px;
 }
 
+.Category-List {
+	margin-bottom: 30px;
+}
+
+.Skills-Button {
+  display: inline-block;
+  margin: 0px auto;
+  height: 40px;
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .App {
 	margin: auto;
   margin-top: 1em;
@@ -117,5 +133,9 @@ ul {
 
 	.Landing-Div	{
 		height: 160px;
+	}
+
+	.SearchBar-Container {
+	height: 460px;
 	}
 }

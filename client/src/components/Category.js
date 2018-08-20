@@ -18,9 +18,11 @@ class Category extends React.Component {
 	}
 
   showResults = () => {
-    this.props.setNotAddedCategories();
-    let listedSkills = this.props.addedCategories;
-    this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
+    if (this.props.addedCategories.length > 0) {
+      this.props.setNotAddedCategories();
+      let listedSkills = this.props.addedCategories;
+      this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
+    }
   }
 
 	addCategory = (e) => {
@@ -43,8 +45,7 @@ class Category extends React.Component {
     items.forEach(item => 
       rawResults = rawResults.concat(item.category)
     );
-    
-    //filter for jobs descriptions that are undefined
+
     let arry = rawResults.filter(item => item !== undefined);
     
     let skillsObj = {};
@@ -111,19 +112,22 @@ class Category extends React.Component {
             className="Title"
           >Do you have these skills?</h2>
 				  <div className="Category-Container">
-            <ul>
+            <ul className="Category-List">
               {Categories}
-            </ul> 
-				  <button 
+            </ul>
+          </div>
+          <button
+            className="Skills-Button" 
             onClick={this.nextButton}>
-				    Next
-				  </button>
-          <button onClick={this.showResults}>
-          Show Results
+            Next
           </button>
-        </div>   
-			</div>
-    </div>
+          <button 
+            className="Skills-Button" 
+            onClick={this.showResults}>
+            Show Results
+          </button>
+			  </div>
+      </div>
 		);
 		} else if (this.props.jobs.returned === true &&
       this.props.jobs.jobs.rss.channel['os:totalResults']._text == 0 ) {
