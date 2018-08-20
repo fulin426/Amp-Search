@@ -32,6 +32,18 @@ li:hover {
 
 .Title {
 	text-align: center;
+	font-size: 32px;
+}
+
+.logo-container {
+  margin: 0px auto;
+  max-width: 580px;
+}
+
+.StackOverFlow-Logo {
+	width: 150px;
+  margin: 0px auto;
+  float: right;
 }
 
 .Landing-Div{

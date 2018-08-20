@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class SearchBar extends React.Component {
 
-  componentWillMount() {
+/*  componentWillMount() {
     //The Crystal Mill, Colorado, USA
     //shows no results
     let query = 'San Mateo';
     this.props.searchJobs(query);
   }
-
+*/
   onFormSubmit = (e) => {
     e.preventDefault();
     let query = this.refs.zipcode.value;
@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
         <div className='Landing-Div'>
         </div>  
         <div className="SearchBar-Container">
-          <h2 className="Title">Stack Overflow Jobs</h2>
+          <h2 className="Title">Amp Search</h2>
           <br />
           <p className="Search-Header">Search by City</p>
           <form onSubmit={this.onFormSubmit}>
@@ -65,6 +65,11 @@ class SearchBar extends React.Component {
               </li>
             </ul>
   			 </div>
+{/*         <div className="logo-container">
+         <img
+          className="StackOverFlow-Logo"
+          src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo.png?v=9c558ec15d8a" />
+         </div> */}
        </div>
 		  );
     }
