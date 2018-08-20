@@ -54,7 +54,8 @@ ul {
 }
 
 .App-Description {
-	margin-bottom: 10px;
+	margin-bottom: 8px;
+	line-height: 26px;
 }
 
 .App-Description-Line {
@@ -71,11 +72,14 @@ ul {
 .Category-Item {
 	margin-bottom: 5px;
 	cursor: pointer;
+	line-height: 10px;
+	margin-bottom: 9px;
 }
 
 .Category-Results {
 	display: inline-block;
 	margin-left: 8px;
+	margin-bottom: 10px;
 	font-size: 16px;
 }
 
@@ -88,8 +92,7 @@ ul {
   margin: 0px auto;
   height: 40px;
   width: 50%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: -10px;
   border-radius: 5px;
   font-size: 20px;
   font-weight: bold;
@@ -101,28 +104,68 @@ ul {
   width: 95%;
   height: 95%;
 }
+/*Display Results*/
+.Showresults{
+	margin: 0px auto;
+	max-width: 1000px;
+}
 
+.ResultsPage-Div{
+	height: 0px;
+	max-width: 1000px;
+}
 .ResultsPage {
 	text-align: center;
 	display: inline-block;
 	height: 444px;
+	max-width: 1000px;
+	margin: 0px auto;
 }
 
 .SkillsList {
 	display: inline-block;
 }
 
+.Result-Skills {
+	cursor: pointer;
+	text-align: left;
+	margin-left: 22px;
+}
+
+.Resulted-Categories {
+	width: 174px;
+	height: 20px;
+	line-height: 12px;
+}
+
+.icon {
+	float: left;
+	vertical-align: middle;
+	line-height: 2px;
+}
+
 .jobResult {
 	margin-bottom: 10px;
+	margin: 0px auto;
 }
 
 .JobResults {
 	display: inline-block;
 	text-align: left;
-	overflow: scroll;
 	height: inherit;
-	width: 70%;
-	margin-left: 20px;
+	width: 100%;
+}
+
+.Restart-Button {
+	display: block;
+	margin: 0px auto;
+	height: 40px;
+  width: 25%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .toggle-selected {
@@ -137,5 +180,16 @@ ul {
 
 	.SearchBar-Container {
 	height: 460px;
+	}
+
+	.ResultsPage-Div{
+	height: 70px;
+	max-width: 1000px;
+	}
+
+	.JobResults {
+	overflow: scroll;
+	width: 70%;
+	margin-left: 25px;
 	}
 }

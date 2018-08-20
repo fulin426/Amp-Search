@@ -15,18 +15,22 @@ class Showresults extends React.Component {
 	render() {
 		if (this.props.resultSet === true) {
 		return (
-			<div className="ResultsPage">
-				<div className="SkillsList"> 
-					<AddedCategories />
-					<NotAddedCategories />
+			<div className="Showresults">
+				<div className='ResultsPage-Div'>
+      	</div>  
+				<div className="ResultsPage">
+					<div className="SkillsList"> 
+						<AddedCategories />
+						<NotAddedCategories />
+					</div>
+					<div className="JobResults">
+						<JobResults />
+					</div>
+					<button className="Restart-Button"
+						onClick={this.startOver}
+					>Start Over
+					</button>
 				</div>
-				<div className="JobResults">
-					<JobResults />
-				</div>
-				<button 
-					onClick={this.startOver}
-				>Start Over
-				</button>
 			</div>
 		);
 		} else {

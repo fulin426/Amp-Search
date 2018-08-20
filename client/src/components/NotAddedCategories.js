@@ -4,6 +4,7 @@ import { setNotAdded } from '../actions/actions';
 import { deleteNotAddedCategory } from '../actions/actions';
 import { addCategory } from '../actions/actions';
 import { setResults } from '../actions/actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class NotAddedCategories extends Component {
 	
@@ -22,14 +23,17 @@ class NotAddedCategories extends Component {
 
 	render() {
 		const notAdded = this.props.notAdded.map((category, index) => 
-		<li 
-			key={index}
-			data-id={category}
-			className="Results"
-			onClick={this.deleteCategory}
-		>
-			{category}
-		</li>
+		<div key={index} className="Resulted-Categories">
+			<FontAwesomeIcon className="icon" icon="minus-circle" size="1x" />
+			<li 
+				key={index}
+				data-id={category}
+				className="Result-Skills NotAdded"
+				onClick={this.deleteCategory}
+			>
+				{category}
+			</li>
+		</div>
 		);
 	if (this.props.resultSet === true) {
 		return (

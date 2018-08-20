@@ -6,10 +6,11 @@ import { icon, library } from '@fortawesome/fontawesome-svg-core'
 import { 
   faClipboardList, 
   faChartPie,
-  faPlusCircle, 
+  faPlusCircle,
+  faMinusCircle, 
   faChartLine 
 } from '@fortawesome/free-solid-svg-icons'
-library.add(faClipboardList, faChartPie, faChartLine, faPlusCircle);
+library.add(faClipboardList, faChartPie, faChartLine, faPlusCircle, faMinusCircle);
 
 import Categories from "./components/Category";
 import SearchBar from "./components/SearchBar";

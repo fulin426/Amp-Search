@@ -5,6 +5,7 @@ import { setNotAddedCategories } from '../actions/actions';
 import { setResults } from '../actions/actions';
 import { createStore } from 'redux';
 import rootReducer from '../reducers/index';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class AddedCategories extends Component {
 
@@ -23,14 +24,17 @@ class AddedCategories extends Component {
 
 	render() {
 		const displayCategories = this.props.addedCategories.map((category, index) =>
-			<li 
-				key={index}
-				className="Results"
-				data-id={category}
-				onClick={this.deleteCategory}
-			>
-				{category}
-			</li>
+			<div key={index} className="Resulted-Categories">
+				<FontAwesomeIcon className="icon" icon="plus-circle" size="1x" />
+				<li 
+					key={index}
+					className="Result-Skills NotAdded"
+					data-id={category}
+					onClick={this.deleteCategory}
+				>
+					{category}
+				</li>
+			</div>
 		);
 		if (this.props.resultSet === true) {
 			return (
