@@ -18,7 +18,7 @@ class JobResults extends Component {
 			key={index}
 			className="jobResult"
 		>
-			<a href={listing.link} target="_blank">
+			<a className="Result-Link"href={listing.link} target="_blank">
 				{listing.title}
 			</a>
 			<p className="Required-Skills">Required Skills: {listing.category}</p>

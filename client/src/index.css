@@ -14,6 +14,13 @@ li:hover {
 	text-decoration: underline;
 }
 
+.show {
+	background-color: green;
+}
+
+.Result-Link:hover {
+	text-decoration: underline;
+}
 /*Landing Page*/
 .SearchBar-Container {
 	border: solid black 1px;
@@ -76,13 +83,13 @@ li:hover {
 
 .Category-Item {
 	margin-bottom: 5px;
-	cursor: pointer;
 	line-height: 10px;
 	margin-bottom: 9px;
 }
 
 .Category-Results {
 	display: inline-block;
+	cursor: pointer;
 	margin-left: 8px;
 	margin-bottom: 10px;
 	font-size: 16px;

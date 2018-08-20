@@ -6,7 +6,7 @@ import { DELETE_CATEGORY } from './types';
 import { SET_NOTADDED_CATEGORIES } from './types';
 import { DELETE_NOTADDED_CATEGORY } from './types';
 import { SET_RESULTS } from './types';
-
+import { SHOW_BACKGROUNDCOLOR } from './types';
 
 import Client from "../Client";
 

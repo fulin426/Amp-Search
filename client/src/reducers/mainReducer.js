@@ -6,6 +6,7 @@ import { DELETE_CATEGORY } from '../actions/types';
 import { SET_NOTADDED_CATEGORIES } from '../actions/types';
 import { DELETE_NOTADDED_CATEGORY } from '../actions/types';
 import { SET_RESULTS } from '../actions/types';
+import { SHOW_BACKGROUNDCOLOR } from '../actions/types';
 
 const initialState = {
 	jobs: {},
@@ -16,7 +17,7 @@ const initialState = {
 	resultSet: false,
 	returned: false,
 	start: 0, 
-	stop: 0
+	stop: 0,
 }
 
 export default function(state = initialState, action) {
@@ -46,7 +47,7 @@ export default function(state = initialState, action) {
 			return {
 				...state,
 				returnedCategories: action.returnedCategories,
-			};	
+			};		
 		case ADD_CATEGORY:
 			const check = (category, arry) => {
 				if (arry.includes(category) === true) {

@@ -28,6 +28,7 @@ class Category extends React.Component {
 	addCategory = (e) => {
 		this.props.addCategory(e.target.dataset.id);
     this.props.returnedCategories(this.refs.initialList.id.split(','));
+    console.log(e.target);
 
 /*    let el = document.querySelector('.Results');
     el.classList.toggle('toggle-selected');*/
@@ -92,7 +93,7 @@ class Category extends React.Component {
       <div key={index} className="Category-Item">
         <FontAwesomeIcon className="icon" icon="plus-circle" size="1x" />
         <li 
-          key={category.text} 
+          key={index} 
         	className="Category-Results"
         	onClick={this.addCategory}
         	data-id={category.text}
@@ -147,7 +148,8 @@ const mapStateToProps = state => ({
   stop: state.jobs.stop,
   returned: state.jobs.returned,
   resultSet: state.jobs.resultSet,
-  addedCategories: state.jobs.addedCategories
+  addedCategories: state.jobs.addedCategories,
+  background: state.jobs.background
 });
 
 export default connect(mapStateToProps, { 
@@ -155,6 +157,6 @@ export default connect(mapStateToProps, {
   addCategory, 
   returnedCategories, 
   setNotAddedCategories, 
-  setResults 
+  setResults,
   })
   (Category);
