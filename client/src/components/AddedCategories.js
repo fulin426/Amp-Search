@@ -24,11 +24,11 @@ class AddedCategories extends Component {
 
 	render() {
 		const displayCategories = this.props.addedCategories.map((category, index) =>
-			<div key={index} className="Resulted-Categories">
+			<div key={index} className="Resulted-Categories" >
 				<FontAwesomeIcon className="icon" icon="plus-circle" size="1x" />
 				<li 
 					key={index}
-					className="Result-Skills NotAdded"
+					className="Result-Skills Added"
 					data-id={category}
 					onClick={this.deleteCategory}
 				>

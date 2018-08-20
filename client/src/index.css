@@ -9,6 +9,11 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+li:hover {
+	text-decoration: underline;
+}
+
 /*Landing Page*/
 .SearchBar-Container {
 	border: solid black 1px;
@@ -116,9 +121,7 @@ ul {
 }
 .ResultsPage {
 	text-align: center;
-	display: inline-block;
-	height: 444px;
-	max-width: 1000px;
+	height: 490px;
 	margin: 0px auto;
 }
 
@@ -129,13 +132,32 @@ ul {
 .Result-Skills {
 	cursor: pointer;
 	text-align: left;
+	padding-left: 8px;
 	margin-left: 22px;
+	border-radius: 4px;
+}
+
+.NotAdded {
+	background-color: #ff4433;
+	color: white;
+}
+.Added {
+	background-color: #339933;
+	color: white;
 }
 
 .Resulted-Categories {
 	width: 174px;
-	height: 20px;
+	height: 21px;
 	line-height: 12px;
+}
+
+.Required-Skills {
+	margin-bottom: 2px;
+}
+
+.Percentage-Match {
+	margin-bottom: 6px;
 }
 
 .icon {
@@ -144,9 +166,8 @@ ul {
 	line-height: 2px;
 }
 
-.jobResult {
-	margin-bottom: 10px;
-	margin: 0px auto;
+.JobResults-Header{
+	text-align: center;
 }
 
 .JobResults {
@@ -154,6 +175,14 @@ ul {
 	text-align: left;
 	height: inherit;
 	width: 100%;
+}
+
+.jobResult {
+	margin-bottom: 10px;
+	border: 1px solid #E0E0E0;
+	background-color: #F8F8F8;
+	border-radius: 5px;
+	padding: 0px 8px;
 }
 
 .Restart-Button {
@@ -191,5 +220,8 @@ ul {
 	overflow: scroll;
 	width: 70%;
 	margin-left: 25px;
+	}
+	.jobResult {
+	margin-right: 25px;
 	}
 }

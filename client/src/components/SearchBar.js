@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
   }
 
 	render() {
-		if (this.props.resultSet === true) {
+		if (this.props.returned === true || this.props.resultSet === true) {
       return (null);
     } else {
       return (
@@ -72,6 +72,7 @@ class SearchBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  returned: state.jobs.returned,
   jobs: state.jobs,
   resultSet: state.jobs.resultSet
 });

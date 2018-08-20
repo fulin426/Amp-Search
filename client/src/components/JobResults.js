@@ -21,14 +21,14 @@ class JobResults extends Component {
 			<a href={listing.link} target="_blank">
 				{listing.title}
 			</a>
-			<p>Required Skills: {listing.category}</p>
-			<p>Percentage Match: {listing.percentage}%</p>
+			<p className="Required-Skills">Required Skills: {listing.category}</p>
+			<p className="Percentage-Match">Percentage Match: {listing.percentage}%</p>
 		</div>
 		);
 	if (this.props.resultSet === true) {
 		return (
 			<div>
-			<h3>Jobs Results ({jobResults.length})</h3>
+			<h3 className="JobResults-Header">Jobs Results ({jobResults.length})</h3>
 				<div>
 					{jobResults}
 				</div>
