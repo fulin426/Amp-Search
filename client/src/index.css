@@ -131,7 +131,7 @@ li:hover {
 /*Display Results*/
 .Showresults{
 	margin: 0px auto;
-	max-width: 1000px;
+	max-width: 960px;
 }
 
 .ResultsPage-Div{
@@ -142,9 +142,14 @@ li:hover {
 	text-align: center;
 	height: 490px;
 	margin: 0px auto;
+	position: relative;
 }
 
 .SkillsList {
+	display: inline-block;
+}
+
+.Skills-Container {
 	display: inline-block;
 }
 
@@ -192,8 +197,7 @@ li:hover {
 .JobResults {
 	display: inline-block;
 	text-align: left;
-	height: inherit;
-	width: 100%;
+	width: 90%;
 }
 
 .jobResult {
@@ -203,17 +207,20 @@ li:hover {
 	border-radius: 5px;
 	padding: 0px 8px;
 }
-
+.ResultsPage-Header {
+  display: inline-block;
+  font-size: 22px;
+  padding-left: 25px;
+}
 .Restart-Button {
-	display: block;
-	margin: 0px auto;
-	height: 40px;
-  width: 25%;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  display: inline-block;
+  height: 40px;
+  width: 140px;
+  margin-bottom: 10px;
   border-radius: 5px;
   font-size: 20px;
   font-weight: bold;
+  float: right;
 }
 
 .toggle-selected {
@@ -232,15 +239,20 @@ li:hover {
 
 	.ResultsPage-Div{
 	height: 70px;
-	max-width: 1000px;
+	max-width: 769px;
 	}
 
 	.JobResults {
-	overflow: scroll;
-	width: 70%;
-	margin-left: 25px;
+	width: 60%;
+	padding-left: 20px;
 	}
-	.jobResult {
-	margin-right: 25px;
+	.SkillsList {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	}
+	.Skills-Container {
+	display: inline;
 	}
 }

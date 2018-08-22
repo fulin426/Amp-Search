@@ -17,6 +17,11 @@ class Showresults extends React.Component {
 		return (
 			<div className="Showresults">
 				<div className='ResultsPage-Div'>
+					<h3 className="ResultsPage-Header">Amp Search</h3>
+					<button className="Restart-Button"
+						onClick={this.startOver}
+					>Start Over
+					</button>
       	</div>  
 				<div className="ResultsPage">
 					<div className="SkillsList"> 
@@ -26,18 +31,12 @@ class Showresults extends React.Component {
 					<div className="JobResults">
 						<JobResults />
 					</div>
-					<button className="Restart-Button"
-						onClick={this.startOver}
-					>Start Over
-					</button>
+
 				</div>
 			</div>
 		);
 		} else {
-			return(
-				<div>
-			</div>
-			);
+			return(null);
 		}
 	}
 }

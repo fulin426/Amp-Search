@@ -38,7 +38,7 @@ class AddedCategories extends Component {
 		);
 		if (this.props.resultSet === true) {
 			return (
-				<div>
+				<div className="Skills-Container">
 					<h3>Skills You Know</h3>
 					<ul>{displayCategories}</ul>
 				</div>
