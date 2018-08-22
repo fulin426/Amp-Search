@@ -217,7 +217,7 @@ li:hover {
 }
 
 .toggle-selected {
-	background-color: green;
+	background-color: #339933;
 }
 
 @media only screen and (min-width: 640px) {

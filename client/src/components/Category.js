@@ -15,6 +15,8 @@ class Category extends React.Component {
 		if (this.props.stop < 20) {
 		this.props.nextCategory();
 		}
+    let el = document.getElementsByClassName("Category-Results");
+    console.log(el);
 	}
 
   showResults = () => {
@@ -28,10 +30,11 @@ class Category extends React.Component {
 	addCategory = (e) => {
 		this.props.addCategory(e.target.dataset.id);
     this.props.returnedCategories(this.refs.initialList.id.split(','));
-    console.log(e.target);
 
-/*    let el = document.querySelector('.Results');
-    el.classList.toggle('toggle-selected');*/
+    let el = e.target;
+    console.log(el);
+    console.log(e.target);
+    el.classList.toggle('toggle-selected');
 	}
   
 	render() {
@@ -92,14 +95,16 @@ class Category extends React.Component {
     Categories = sortedItems.map((category, index) =>
       <div key={index} className="Category-Item">
         <FontAwesomeIcon className="icon" icon="plus-circle" size="1x" />
-        <li 
-          key={index} 
-        	className="Category-Results"
-        	onClick={this.addCategory}
-        	data-id={category.text}
-        >
-          {category.text}
-        </li>
+        <div className="category-line">
+          <li 
+            key={index} 
+          	className="Category-Results"
+          	onClick={this.addCategory}
+          	data-id={category.text}
+          >
+            {category.text}
+          </li>
+        </div>
       </div>
     ); 
     return (
