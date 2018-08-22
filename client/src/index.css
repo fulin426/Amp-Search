@@ -139,9 +139,8 @@ li:hover {
 	max-width: 1000px;
 }
 .ResultsPage {
+	max-width: 820px;
 	text-align: center;
-	height: 490px;
-	margin: 0px auto;
 	position: relative;
 }
 
@@ -209,7 +208,7 @@ li:hover {
 }
 .ResultsPage-Header {
   display: inline-block;
-  font-size: 22px;
+  font-size: 26px;
   padding-left: 25px;
 }
 .Restart-Button {
@@ -239,19 +238,21 @@ li:hover {
 
 	.ResultsPage-Div{
 	height: 70px;
-	max-width: 769px;
+	max-width: 820px;
 	}
 
 	.JobResults {
-	width: 60%;
-	padding-left: 20px;
-	}
+  width: 75%;
+  float: right;
+  }
+
 	.SkillsList {
 	display: inline-block;
 	position: absolute;
 	top: 0;
 	left: 0;
 	}
+
 	.Skills-Container {
 	display: inline;
 	}
