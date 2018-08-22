@@ -133,15 +133,16 @@ li:hover {
   height: 95%;
 }
 /*Display Results*/
+.ResultsPage-Div {
+	height: 70px;
+	max-width: 800px;
+}
+
 .Showresults{
 	margin: 0px auto;
 	max-width: 960px;
 }
 
-.ResultsPage-Div{
-	height: 0px;
-	max-width: 1000px;
-}
 .ResultsPage {
 	max-width: 820px;
 	text-align: center;
@@ -283,7 +284,7 @@ footer{
 	height: 460px;
 	}
 
-	.ResultsPage-Div{
+	.ResultsPage-Div {
 	height: 70px;
 	max-width: 820px;
 	}
