@@ -82,6 +82,10 @@ li:hover {
 	line-height: 26px;
 }
 
+.App-Description-Line:hover {
+	text-decoration: none;
+}
+
 .App-Description-Line {
 	margin-left: 12px;
 	font-size: 16px;
@@ -222,8 +226,51 @@ li:hover {
   float: right;
 }
 
+.Restart-Button-Error {
+  display: inline-block;
+  height: 40px;
+  width: 140px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.Restart-Button-Error-Wrapper {
+	width: 140px;
+	margin: 0 auto;
+}
+
 .toggle-selected {
 	background-color: #339933;
+}
+
+/*footer*/
+a:link {
+	color: black;
+}
+
+footer{
+	margin-top: 18px;
+	text-align: center;
+}
+
+.contacts-wrapper {
+	margin: 0 auto;
+	max-width: 240px;
+	margin-top: 10px;
+}
+
+.contact-logo{
+	display: inline-block;
+	width: 31%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.error-handle {
+	font-size: 22px;
 }
 
 @media only screen and (min-width: 640px) {

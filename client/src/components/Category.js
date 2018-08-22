@@ -19,6 +19,11 @@ class Category extends React.Component {
     console.log(el);
 	}
 
+  startOver = (e) => {
+    e.preventDefault();
+    location.reload();
+  }
+
   showResults = () => {
     if (this.props.addedCategories.length > 0) {
       this.props.setNotAddedCategories();
@@ -139,8 +144,19 @@ class Category extends React.Component {
       this.props.jobs.jobs.rss.channel['os:totalResults']._text == 0 ) {
       return(
       <div>
-        <p>Did not match any jobs. Please try searching a different location</p>
-      </div>);
+        <div className='Landing-Div'>
+        </div>
+        <div className="SearchBar-Container">
+          <p className="error-handle">Did not match any jobs. Please try searching a different location</p>
+          <div className="Restart-Button-Error-Wrapper">
+          <button className="Restart-Button-Error"
+            onClick={this.startOver}
+            >Start Over
+          </button>
+          </div> 
+        </div>
+      </div>
+      );
     } else {
       return(null);
     }

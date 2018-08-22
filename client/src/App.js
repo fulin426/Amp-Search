@@ -15,6 +15,7 @@ library.add(faClipboardList, faChartPie, faChartLine, faPlusCircle, faMinusCircl
 import Categories from "./components/Category";
 import SearchBar from "./components/SearchBar";
 import ShowResults from "./components/ShowResults";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
 
@@ -25,6 +26,7 @@ class App extends React.Component {
           <SearchBar />
           <Categories />
           <ShowResults />
+          <Footer />
         </div>
       </Provider>     
     );
