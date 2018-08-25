@@ -82,8 +82,9 @@ li:hover {
 	line-height: 26px;
 }
 
-.App-Description-Line:hover {
+.App-Description-Line: hover {
 	text-decoration: none;
+	color: red;
 }
 
 .App-Description-Line {
@@ -116,7 +117,7 @@ li:hover {
 }
 
 .Skills-Button {
-  display: inline-block;
+  display: block;
   margin: 0px auto;
   height: 40px;
   width: 50%;
@@ -159,10 +160,12 @@ li:hover {
 
 .Result-Skills {
 	cursor: pointer;
-	text-align: left;
-	padding-left: 8px;
-	margin-left: 22px;
-	border-radius: 4px;
+    text-align: left;
+    padding: 2px;
+    padding-left: 8px;
+    margin-left: 22px;
+    border-radius: 4px;
+    height: 18px;
 }
 
 .NotAdded {
@@ -248,7 +251,7 @@ li:hover {
 }
 
 /*footer*/
-a:link {
+.footer-link {
 	color: black;
 }
 
@@ -290,9 +293,9 @@ footer{
 	}
 
 	.JobResults {
-  width: 75%;
-  float: right;
-  }
+ 	 width: 75%;
+  	float: right;
+  	}
 
 	.SkillsList {
 	display: inline-block;

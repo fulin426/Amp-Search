@@ -127,16 +127,18 @@ class Category extends React.Component {
               {Categories}
             </ul>
           </div>
-          <button
+{/*          <button
             className="Skills-Button" 
             onClick={this.nextButton}>
             Next
-          </button>
-          <button 
-            className="Skills-Button" 
-            onClick={this.showResults}>
-            Show Results
-          </button>
+          </button>*/}
+          <div className="button-wrapper">
+            <button 
+              className="Skills-Button" 
+              onClick={this.showResults}>
+              Show Results
+            </button>
+          </div>
 			  </div>
       </div>
 		);

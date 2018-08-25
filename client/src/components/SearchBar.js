@@ -44,26 +44,24 @@ class SearchBar extends React.Component {
               role="button" 
             />
             </form>
-            <ul>
-              <li className="App-Description">
-                <FontAwesomeIcon icon="chart-line" size="3x" />
-                <span className="App-Description-Line">
-                Discover which technologies are in demand based on city
-                </span>
-              </li>
-              <li className="App-Description">
-                <FontAwesomeIcon icon="chart-pie" size="3x" />
-                <span className="App-Description-Line">
-                  Find jobs based on how well they are matched to your skillset
-                </span>
-              </li>
-              <li className="App-Description">
-                <FontAwesomeIcon icon="clipboard-list" size="3x" />
-                <span className="App-Description-Line">
-                  Assess which technologies to learn in order to qualify for more jobs
-                </span>
-              </li>
-            </ul>
+            <div className="App-Description">
+              <FontAwesomeIcon icon="chart-line" size="3x" />
+              <span className="App-Description-Line">
+              Discover which technologies are in demand based on city
+              </span>
+            </div>
+            <div className="App-Description">
+              <FontAwesomeIcon icon="chart-pie" size="3x" />
+              <span className="App-Description-Line">
+                Find jobs based on how well they are matched to your skillset
+              </span>
+            </div>
+            <div className="App-Description">
+              <FontAwesomeIcon icon="clipboard-list" size="3x" />
+              <span className="App-Description-Line">
+                Assess which technologies to learn in order to qualify for more jobs
+              </span>
+            </div>
   			 </div>
        </div>
 		  );
