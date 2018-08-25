@@ -1,3 +1,34 @@
+# # Amp Search React Capstone
+Thinkful (https://www.thinkful.com) Third Capstone Project Amp Search is a interactive fullstack web app that allows users to search for jobs based on skills/technlogies that the user has.
+
+## Screenshots
+![Screenshots](https://raw.githubusercontent.com/fulin426/React-Capstone/master/public/Images/screenshot_landing-page.png)
+![Screenshots](https://raw.githubusercontent.com/fulin426/React-Capstone/master/public/Images/screenshot_login.png)
+![Screenshots](https://raw.githubusercontent.com/fulin426/React-Capstone/master/public/Images/screenshot_my-events.png)
+
+## Use Case
+Upcoming Events App is for fans of music events to search for and manage their events in one place. Keep track of all the up shows so you'll never miss an event.
+
+## Working Prototype
+
+Live preview with Node at https://capstone-upcoming-events.herokuapp.com/ and with React https://fulin426.github.io/upcoming-events-react-capstone/build
+
+## Technology
+### Front End
+* HTML
+* CSS
+* JavaScript
+* React
+* Redux
+
+### Back End
+* Node.js
+
+## Responsive
+This app is responsive and optimized for desktop and mobile use. 
+
+
+
 <!-- <<<<<<< HEAD
 # `create-react-app` with a server example
 
