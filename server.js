@@ -27,7 +27,14 @@ if (process.env.NODE_ENV === "production") {
 
 app.get("/api/search/:location", (req, res) => {
   let query = req.params.location;
-  request(`http://careers.stackoverflow.com/jobs/feed?location=${query}`, function (error, response, body) {
+  let options = {
+    proxy: process.env.QUOTAGAURDSTATIC_URL || "http://740pu5fb5kh617:z75ybVo0WvbPPN66UwPOO2N9zQ@us-east-static-01.quotaguard.com:9293",
+    url: `http://careers.stackoverflow.com/jobs/feed?location=${query}`,
+    headers: {
+      'User-Agent': 'node.js'
+    }
+  };
+  request(options, function (error, response, body) {
     console.log(`Searching ${query}`);
     console.log('error:', error);
     console.log('statusCode:', response && response.statusCode);
@@ -35,54 +42,6 @@ app.get("/api/search/:location", (req, res) => {
     res.send(result);
   });
 });
-
-/*const COLUMNS = [
-  "carbohydrate_g",
-  "protein_g",
-  "fa_sat_g",
-  "fa_mono_g",
-  "fa_poly_g",
-  "kcal",
-  "description"
-];
-app.get("/api/food", (req, res) => {
-  const param = req.query.q;
-  if (!param) {
-    res.json({
-      error: "Missing required parameter `q`"
-    });
-    return;
-  }
-  // WARNING: Not for production use! The following statement
-  // is not protected against SQL injections.
-  const r = db.exec(
-    `
-    select ${COLUMNS.join(", ")} from entries
-    where description like '%${param}%'
-    limit 100
-  `
-  );
-  if (r[0]) {
-    res.json(
-      r[0].values.map(entry => {
-        const e = {};
-        COLUMNS.forEach((c, idx) => {
-          // combine fat columns
-          if (c.match(/^fa_/)) {
-            e.fat_g = e.fat_g || 0.0;
-            e.fat_g = (parseFloat(e.fat_g, 10) +
-              parseFloat(entry[idx], 10)).toFixed(2);
-          } else {
-            e[c] = entry[idx];
-          }
-        });
-        return e;
-      })
-    );
-  } else {
-    res.json([]);
-  }
-});*/
 
 app.listen(app.get("port"), () => {
   console.log(`Find the server at: http://localhost:${app.get("port")}/`); // eslint-disable-line no-console
