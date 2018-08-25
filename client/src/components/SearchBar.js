@@ -30,7 +30,7 @@ class SearchBar extends React.Component {
         <div className="SearchBar-Container">
           <h2 className="Title">Amp Search</h2>
           <br />
-          <p className="Search-Header">Search by City</p>
+          <p className="Search-Header">Search by City or ZipCode</p>
           <form onSubmit={this.onFormSubmit} role="search">
             <input
               className="Search-Input"
