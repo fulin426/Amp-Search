@@ -10,8 +10,7 @@ Thinkful (https://www.thinkful.com) Third Capstone Project Amp Search is a inter
 Upcoming Events App is for fans of music events to search for and manage their events in one place. Keep track of all the up shows so you'll never miss an event.
 
 ## Working Prototype
-
-Live preview with Node at https://capstone-upcoming-events.herokuapp.com/ and with React https://fulin426.github.io/upcoming-events-react-capstone/build
+Live preview https://ampsearch.herokuapp.com/
 
 ## Technology
 ### Front End
