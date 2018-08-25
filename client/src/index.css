@@ -82,11 +82,6 @@ li:hover {
 	line-height: 26px;
 }
 
-.App-Description-Line: hover {
-	text-decoration: none;
-	color: red;
-}
-
 .App-Description-Line {
 	margin-left: 12px;
 	font-size: 16px;
