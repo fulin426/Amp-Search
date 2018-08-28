@@ -143,7 +143,7 @@ class Category extends React.Component {
       </div>
 		);
 		} else if (this.props.jobs.returned === true &&
-      this.props.jobs.jobs.rss.channel['os:totalResults']._text == 0 ) {
+      this.props.jobs.jobs.rss.channel['os:totalResults']._text === 0 ) {
       return(
       <div>
         <div className='Landing-Div'>
@@ -175,11 +175,4 @@ const mapStateToProps = state => ({
   background: state.jobs.background
 });
 
-export default connect(mapStateToProps, { 
-  nextCategory, 
-  addCategory, 
-  returnedCategories, 
-  setNotAddedCategories, 
-  setResults,
-  })
-  (Category);
+export default connect(mapStateToProps, { nextCategory, addCategory, returnedCategories, setNotAddedCategories, setResults})(Category);

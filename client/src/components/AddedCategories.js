@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { deleteCategory } from '../actions/actions';
 import { setNotAddedCategories } from '../actions/actions';
 import { setResults } from '../actions/actions';
-import { createStore } from 'redux';
-import rootReducer from '../reducers/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class AddedCategories extends Component {
