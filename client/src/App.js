@@ -8,14 +8,16 @@ import {
   faChartPie,
   faPlusCircle,
   faMinusCircle, 
-  faChartLine 
+  faChartLine,
+  faSmileBeam 
 } from '@fortawesome/free-solid-svg-icons'
-library.add(faClipboardList, faChartPie, faChartLine, faPlusCircle, faMinusCircle);
+library.add(faClipboardList, faChartPie, faChartLine, faPlusCircle, faMinusCircle, faSmileBeam);
 
 import Categories from "./components/Category";
 import SearchBar from "./components/SearchBar";
 import ShowResults from "./components/ShowResults";
 import Footer from "./components/Footer";
+import DescriptionBullets from "./components/DescriptionBullets";
 
 class App extends React.Component {
 
@@ -26,6 +28,7 @@ class App extends React.Component {
           <SearchBar />
           <Categories />
           <ShowResults />
+          <DescriptionBullets />
           <Footer />
         </div>
       </Provider>     

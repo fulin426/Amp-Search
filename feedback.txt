@@ -1,0 +1,73 @@
+Capstone Project Review Checklist
+Did the student pass this evaluation?
+
+yes
+
+Is this project ready for official scoring?
+
+yes
+
+Mobile-first Design
+
+yes
+
+Landing page
+
+yes
+
+Quality Content
+
+yes
+
+Login
+
+no
+
+Concept score
+
+Functionality score
+
+Other feedback
+
+Hi Fu Lin,
+
+Thanks for submitting your app for review. You've done great work and I commend your efforts!
+
+Overall, I have recommended that your app be approved.
+
+I've included detailed feedback and suggestions below, along with screenshots, which I hope will be helpful.
+
+Your screenshots and a downloadable version of this feedback are available at https://www.dropbox.com/sh/v32shq7nkf7hbp0/AACrUsaH4m-B82DkBZe-GGiCa?dl=0. Please download them within one week, as I may remove them after that time.
+
+If you'd like to discuss anything in more detail, you're welcome to get in touch with me via email at jharris@thinkful.com, or on Slack at @joshua_harris.
+
+Kind regards, Joshua Harris, Capstone Grader
+
+Concept
+Concept is clear from the feature descriptions. Recommend adding a basic one-sentence tagline below the application title which succinctly describes the benefit a user will get from using the application.
+
+Functionality
+I use a traffic light system for functionality review. G stands for green, meaning the feature is working well. Y stands for yellow, meaning the feature is mostly working but needs some attention. R stands for red, meaning the feature appears to be broken.
+
+[G] Search for Jobs
+Recommend implementing loading indicator for any functionality like this that can take some time to complete (especially if your Heroku application has gone to sleep), and keeping the form field populated with the user's search until the search results come up so it's clear the application is working.
+[G] View Listings
+[G] Add and Remove Skills
+Mobile-First Design
+Mobile-First Design: Landing Page
+Recommend decreasing whitespace on mobile to bring content closer to the top of the screen. (1)
+Mobile-First Design: Application
+All screens respond well on all tested screen sizes and devices. Great job!
+
+Design/UX
+Design/UX: Landing Page
+Landing page has good information, but styles are sparse. Recommend adding some variation in color and layout to add visual interest. See existing landing pages for examples.
+Simple
+Duolingo
+InVision
+Design/UX: Application
+Recommend increasing spacing and font size of listings to make them more readable. See http://uxarchive.com, http://mobile-patterns.com, and http://dribbble.com for design inspiration.
+Did the student pass this evaluation?
+
+yes
+
