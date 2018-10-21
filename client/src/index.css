@@ -21,12 +21,35 @@ li:hover {
 .Result-Link:hover {
 	text-decoration: underline;
 }
+/*header*/
+.Header {
+	width: 100%;
+    background-color: #18121e;
+    border-bottom: 1px solid #b8b2be;
+    color: white;
+    padding: 8px 18px;
+    display: inline-block;
+}
+
+.Amp-Title {
+	display: inline-block;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.Header-Section {
+	float: right;
+	display: inline-block;
+	line-height: 0px;
+}
+
 /*Landing Page*/
 .SearchBar-Container {
 	max-width: 580px;
-	height: 200px;
-	margin: 0px auto;
-	padding: 26px;
+	height: 110px;
+	margin: 16px auto;
+	padding: 16px;
 }
 
 .Search-Header {
@@ -70,10 +93,17 @@ li:hover {
 }
 
 .home-learn {
-	padding: 12px 0;
-	margin: 0 auto;
+	padding: 8px 0;
+	margin: 25px auto;
 	overflow: hidden;
 	max-width: 1342px;
+}
+
+.learn-title-wrapper {
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	padding: 0px 16px;
 }
 
 .learn-sector {
@@ -81,11 +111,6 @@ li:hover {
 	margin: 0 auto;
 }
 
-.learn-title {
-	font-size: 20px;
-	font-weight: bold;
-	padding: 0px 16px;
-}
 /*Do you have these skills?*/
 .Category-Container {
 	margin: 0px auto;
@@ -122,18 +147,7 @@ li:hover {
   font-weight: bold;
 }
 
-.App {
-  margin: auto;
-  margin-top: 1em;
-  width: 95%;
-  height: 95%;
-}
 /*Display Results*/
-.ResultsPage-Div {
-	height: 70px;
-	max-width: 800px;
-}
-
 .Showresults{
 	margin: 0px auto;
 	max-width: 960px;
@@ -250,9 +264,10 @@ li:hover {
 	color: black;
 }
 
-footer{
+footer {
 	margin-top: 18px;
 	text-align: center;
+	height: 250px;
 }
 
 .contacts-wrapper {
@@ -276,11 +291,6 @@ footer{
 
 	.Landing-Div	{
 		height: 160px;
-	}
-
-	.ResultsPage-Div {
-	height: 70px;
-	max-width: 820px;
 	}
 
 	.JobResults {

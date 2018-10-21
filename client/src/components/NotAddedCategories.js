@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setNotAdded } from '../actions/actions';
 import { deleteNotAddedCategory } from '../actions/actions';
 import { addCategory } from '../actions/actions';
 import { setResults } from '../actions/actions';
@@ -35,7 +34,7 @@ class NotAddedCategories extends Component {
 			</li>
 		</div>
 		);
-	if (this.props.resultSet === true) {
+	if (true) {
 		return (
 			<div className="Skills-Container">
 				<h3>Skills You Don't Have</h3>

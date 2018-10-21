@@ -25,7 +25,7 @@ class JobResults extends Component {
 			<p className="Percentage-Match">Percentage Match: {listing.percentage}%</p>
 		</div>
 		);
-	if (this.props.resultSet === true) {
+	if (true) {
 		return (
 			<div>
 			<h3 className="JobResults-Header">Jobs Results ({jobResults.length})</h3>

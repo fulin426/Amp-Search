@@ -6,23 +6,10 @@ import JobResults from "./JobResults";
 import '../index.css'
 
 class Showresults extends React.Component {
-
-	startOver = (e) => {
-		e.preventDefault();
-		location.reload();
-	}
-	
 	render() {
-		if (this.props.resultSet === true) {
+		if (this.props.jobs.returned === true && this.props.jobs.jobs.rss.channel['os:totalResults']._text > 0) {
 		return (
 			<div className="Showresults">
-				<div className='ResultsPage-Div'>
-					<h3 className="ResultsPage-Header">Amp Search</h3>
-					<button className="Restart-Button"
-						onClick={this.startOver}
-					>Start Over
-					</button>
-      	</div>  
 				<div className="ResultsPage">
 					<div className="SkillsList"> 
 						<AddedCategories />
@@ -42,6 +29,8 @@ class Showresults extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  jobs: state.jobs,
+  returned: state.jobs.returned,
   resultSet: state.jobs.resultSet
 });
 

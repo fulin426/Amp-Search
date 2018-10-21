@@ -18,6 +18,7 @@ import SearchBar from "./components/SearchBar";
 import ShowResults from "./components/ShowResults";
 import Footer from "./components/Footer";
 import DescriptionBullets from "./components/DescriptionBullets";
+import Header from "./components/Header";
 
 class App extends React.Component {
 
@@ -25,6 +26,7 @@ class App extends React.Component {
     return (
       <Provider store={store}> 
         <div className="App">
+          <Header />
           <SearchBar />
           <Categories />
           <ShowResults />

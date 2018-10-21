@@ -34,7 +34,7 @@ class AddedCategories extends Component {
 				</li>
 			</div>
 		);
-		if (this.props.resultSet === true) {
+		if (true) {
 			return (
 				<div className="Skills-Container">
 					<h3>Skills You Know</h3>

@@ -25,11 +25,9 @@ class Category extends React.Component {
   }
 
   showResults = () => {
-    if (this.props.addedCategories.length > 0) {
-      this.props.setNotAddedCategories();
-      let listedSkills = this.props.addedCategories;
-      this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
-    }
+    this.props.setNotAddedCategories();
+    let listedSkills = this.props.addedCategories;
+    this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
   }
 
 	addCategory = (e) => {

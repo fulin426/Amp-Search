@@ -6,7 +6,6 @@ import { DELETE_CATEGORY } from '../actions/types';
 import { SET_NOTADDED_CATEGORIES } from '../actions/types';
 import { DELETE_NOTADDED_CATEGORY } from '../actions/types';
 import { SET_RESULTS } from '../actions/types';
-import { SHOW_BACKGROUNDCOLOR } from '../actions/types';
 
 const initialState = {
 	jobs: {},
@@ -75,7 +74,6 @@ export default function(state = initialState, action) {
 		case SET_RESULTS:
 			return {
 				...state,
-				returned: false,
 				resultSet: true,
 				setResults: action.setResults
 			};				
