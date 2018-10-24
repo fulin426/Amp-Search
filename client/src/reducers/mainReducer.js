@@ -15,17 +15,59 @@ const initialState = {
 	setResults: [],
 	resultSet: false,
 	returned: false,
-	start: 0, 
+	start: 0,
 	stop: 0,
 }
 
 export default function(state = initialState, action) {
 	switch(action.type) {
 		case SEARCH_JOBS:
+			let items = action.payload.rss.channel.item;
+			let rawResults = [];
+			items.forEach(item =>
+				rawResults = rawResults.concat(item.category)
+			);
+
+			let categoryArray = rawResults.filter(item => item !== undefined);
+
+			let skillsObj = {};
+			for (let i=0; i<categoryArray.length; i++) {
+				if (skillsObj[categoryArray[i]._text]) {
+					skillsObj[categoryArray[i]._text]++;
+				} else {
+					skillsObj[categoryArray[i]._text] = 1
+				}
+			}
+
+			for (let i=0; i<categoryArray.length; i++) {
+				if (skillsObj[categoryArray[i]._text]) {
+					skillsObj[categoryArray[i]._text]++;
+				} else {
+				skillsObj[categoryArray[i]._text] = 1
+				}
+			}
+
+			let sortable = [];
+			for (let skill in skillsObj) {
+				sortable.push([skill, skillsObj[skill]]);
+			}
+
+			sortable.sort(function(a,b) {
+			return b[1]-a[1];
+			});
+			let slicedSortable = sortable.slice(0, 20);
+
+			let sortedItems = [];
+			for (let i=0; i<slicedSortable.length; i++) {
+				sortedItems.push(slicedSortable[i][0]);
+			}
+			console.log(sortedItems);
 			return {
 				...state,
 				jobs: action.payload,
 				returned: true,
+				returnedCategories:sortedItems,
+				NotAddedCategories:sortedItems,
 				start: 0,
 				stop: 10
 			}
@@ -41,12 +83,12 @@ export default function(state = initialState, action) {
 			return {
 				...state,
 				NotAddedCategories: addedArry.filter(item => !toRemove.includes(item)),
-			};		
+			};
 		case SET_RETURNED_CATEGORIES:
 			return {
 				...state,
 				returnedCategories: action.returnedCategories,
-			};		
+			};
 		case ADD_CATEGORY:
 			const check = (category, arry) => {
 				if (arry.includes(category) === true) {
@@ -70,14 +112,14 @@ export default function(state = initialState, action) {
 			return {
 				...state,
 				NotAddedCategories: state.NotAddedCategories.filter(item => item !== action.deleteNotAdded),
-			};	
+			};
 		case SET_RESULTS:
 			return {
 				...state,
 				resultSet: true,
 				setResults: action.setResults
-			};				
-		default: 
+			};
+		default:
 			return state;
 	}
 }

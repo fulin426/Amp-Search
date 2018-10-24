@@ -12,7 +12,7 @@ import Client from "../Client";
 export const searchJobs = (query) => dispatch => {
 	console.log(`Searching ${query}`);
 	Client.search(query)
-    .then(jobs => 
+    .then(jobs =>
     	dispatch ({
       	type: SEARCH_JOBS,
       	payload: jobs
@@ -67,9 +67,9 @@ export const setResults = (jobs, mySkills) => dispatch => {
 		for (let i=0; i<currentState.length; i++) {
 			listedSkills = listedSkills.concat(currentState[i]._text);
 		}
-    
+
     let matchedSkills =[];
-    
+
     listedSkills.forEach(skill => {
   		if(mySkills.indexOf(skill)>=0)	{
    			matchedSkills.push(skill);
@@ -85,9 +85,9 @@ export const setResults = (jobs, mySkills) => dispatch => {
 		}
     return listedSkills.toString().split(',').join(', ');
 	}
-	
+
 	const sortedJobs = []
-	
+
 	for (let i=0; i<jobs.length; i++) {
 		if (jobs[i].category !== undefined) {
 			sortedJobs.push({

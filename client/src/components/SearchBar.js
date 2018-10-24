@@ -6,9 +6,8 @@ import { setResults } from '../actions/actions';
 class SearchBar extends React.Component {
 
   componentWillMount() {
-    if (this.props.jobs.returned === true) {
-      this.props.setResults(this.props.jobs.jobs.rss.channel.item);
-    } 
+    let query = 'san jose';
+    this.props.searchJobs(query);
   }
 
   onFormSubmit = (e) => {
@@ -23,15 +22,14 @@ class SearchBar extends React.Component {
     this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
   }
 
-	render() {   
-    if (this.props.jobs.returned === true && 
+	render() {
+    if (this.props.jobs.returned === true &&
       this.props.jobs.jobs.rss.channel['os:totalResults']._text > 0) {
-      console.log('fired!');
       {this.showResults};
     };
 
     return (
-    <div> 
+    <div>
       <div className="SearchBar-Container">
         <p className="Search-Header">Search by City or ZipCode</p>
         <form onSubmit={this.onFormSubmit} role="search">
@@ -41,10 +39,10 @@ class SearchBar extends React.Component {
               ref='zipcode'
             />
             <input
-              className="Search-Button" 
-              type="submit" 
+              className="Search-Button"
+              type="submit"
               value="Search"
-              role="button" 
+              role="button"
             />
         </form>
 			 </div>

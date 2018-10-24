@@ -3,13 +3,13 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import './index.css'
 import { icon, library } from '@fortawesome/fontawesome-svg-core'
-import { 
-  faClipboardList, 
+import {
+  faClipboardList,
   faChartPie,
   faPlusCircle,
-  faMinusCircle, 
+  faMinusCircle,
   faChartLine,
-  faSmileBeam 
+  faSmileBeam
 } from '@fortawesome/free-solid-svg-icons'
 library.add(faClipboardList, faChartPie, faChartLine, faPlusCircle, faMinusCircle, faSmileBeam);
 
@@ -24,19 +24,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <Provider store={store}> 
+      <Provider store={store}>
         <div className="App">
           <Header />
           <SearchBar />
-          <Categories />
           <ShowResults />
           <DescriptionBullets />
           <Footer />
         </div>
-      </Provider>     
+      </Provider>
     );
   }
 }
 
 export default App;
-
