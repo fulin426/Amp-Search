@@ -5,17 +5,23 @@ import '../index.css';
 
 class Loading extends React.Component {
 render() {
-  if (this.props.renderbubble === "add new action/reducer") {
+  if (this.props.renderbubble === "show") {
     return (
       <ReactLoading
-        type="spin"
+        type="bars"
         color="#00FFFF"
         height="22px"
         width="22px"
         className="Loading-Bubble" />
       );
     } else {
-      return(null);
+      return(
+      <ReactLoading
+        type=""
+        height="22px"
+        width="22px"
+        className="Loading-Bubble" />
+      );
     }
   }
 }

@@ -48,8 +48,8 @@ li:hover {
 .SearchBar-Container {
 	max-width: 580px;
 	height: 110px;
-	margin: 16px auto;
-	padding: 16px;
+	margin: 12px auto;
+	padding: 12px;
 }
 .Header-Wrap {
   display: inline-block;
@@ -76,6 +76,7 @@ li:hover {
 	margin: 0px 8px;
 	padding: 8px;
 	font-size: 18px;
+  cursor: auto;
 	display: inline-block;
 }
 

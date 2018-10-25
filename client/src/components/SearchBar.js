@@ -1,16 +1,22 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { searchJobs } from '../actions/actions';
-import { setResults } from '../actions/actions';
+import { setResults } from '../actions/actions'
+import { showRendering } from '../actions/actions';
 import Loading from "./Loading";
 
 class SearchBar extends React.Component {
   onFormSubmit = (e) => {
     e.preventDefault();
+    this.props.showRendering();
     let query = this.refs.zipcode.value;
     this.props.searchJobs(query);
     this.refs.zipcode.value = '';
   }
+
+  //componentDidMount() {
+  //this.nameInput.focus();
+  //}
 
 	render() {
     return (
@@ -25,6 +31,7 @@ class SearchBar extends React.Component {
               className="Search-Input"
               placeholder='Search'
               ref='zipcode'
+              //ref={(input) => { this.nameInput = input; }}
             />
             <input
               className="Search-Button"
@@ -46,4 +53,4 @@ const mapStateToProps = state => ({
   resultSet: state.jobs.resultSet
 });
 
-export default connect(mapStateToProps, { searchJobs, setResults })(SearchBar);
+export default connect(mapStateToProps, { searchJobs, setResults, showRendering})(SearchBar);

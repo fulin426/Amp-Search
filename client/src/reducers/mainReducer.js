@@ -6,6 +6,7 @@ import { DELETE_CATEGORY } from '../actions/types';
 import { SET_NOTADDED_CATEGORIES } from '../actions/types';
 import { DELETE_NOTADDED_CATEGORY } from '../actions/types';
 import { SET_RESULTS } from '../actions/types';
+import { SHOW_RENDERING } from '../actions/types';
 
 const initialState = {
 	jobs: {},
@@ -63,7 +64,6 @@ export default function(state = initialState, action) {
 			for (let i=0; i<slicedSortable.length; i++) {
 				sortedItems.push(slicedSortable[i][0]);
 			}
-			console.log(sortedItems);
 			return {
 				...state,
 				jobs: action.payload,
@@ -73,7 +73,7 @@ export default function(state = initialState, action) {
 				NotAddedCategories:sortedItems,
 				addedCategories: [],
 				setResults: [],
-				renderbubble: "show",
+				renderbubble: "hide",
 				start: 0,
 				stop: 10
 			}
@@ -83,6 +83,11 @@ export default function(state = initialState, action) {
 				start: state.start + 10,
 				stop: state.stop + 10
 			};
+			case SHOW_RENDERING:
+				return {
+					...state,
+					renderbubble: "show"
+				};
 		case SET_NOTADDED_CATEGORIES:
 			let addedArry = state.returnedCategories;
 			let toRemove = state.addedCategories;

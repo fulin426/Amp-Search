@@ -6,6 +6,7 @@ import { DELETE_CATEGORY } from './types';
 import { SET_NOTADDED_CATEGORIES } from './types';
 import { DELETE_NOTADDED_CATEGORY } from './types';
 import { SET_RESULTS } from './types';
+import { SHOW_RENDERING } from './types';
 
 import Client from "../Client";
 
@@ -23,6 +24,12 @@ export const searchJobs = (query) => dispatch => {
 export const nextCategory = () => dispatch => {
 	dispatch({
 		type: NEXT_CATEGORY
+	});
+}
+
+export const showRendering = () => dispatch => {
+	dispatch({
+		type: SHOW_RENDERING
 	});
 }
 
