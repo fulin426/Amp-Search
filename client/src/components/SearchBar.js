@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import { searchJobs } from '../actions/actions';
 import { setResults } from '../actions/actions';
+import Loading from "./Loading";
 
 class SearchBar extends React.Component {
   onFormSubmit = (e) => {
@@ -15,7 +16,10 @@ class SearchBar extends React.Component {
     return (
     <div>
       <div className="SearchBar-Container">
-        <p className="Search-Header">Search by City or ZipCode</p>
+        <div className="Header-Wrap">
+          <p className="Search-Header">Search by City or ZipCode</p>
+          <Loading />
+        </div>
         <form onSubmit={this.onFormSubmit} role="search">
             <input
               className="Search-Input"

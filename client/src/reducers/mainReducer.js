@@ -14,6 +14,7 @@ const initialState = {
 	addedCategories: [],
 	NotAddedCategories: [],
 	setResults: [],
+	renderbubble: "hide",
 	resultSet: false,
 	returned: false,
 	start: 0,
@@ -72,6 +73,7 @@ export default function(state = initialState, action) {
 				NotAddedCategories:sortedItems,
 				addedCategories: [],
 				setResults: [],
+				renderbubble: "show",
 				start: 0,
 				stop: 10
 			}
