@@ -12,19 +12,18 @@ class AddedCategories extends Component {
 
 		this.props.deleteCategory(selected);
 		this.props.setNotAddedCategories();
-    
+
     let listedSkills = this.props.addedCategories;
     listedSkills = listedSkills.filter( item => item !== selected);
 
     let jobResults = this.props.jobs.jobs.rss.channel.item
-		this.props.setResults(jobResults, listedSkills);	
+		this.props.setResults(jobResults, listedSkills);
 	}
 
 	render() {
 		const displayCategories = this.props.addedCategories.map((category, index) =>
 			<div key={index} className="Resulted-Categories" >
-				<FontAwesomeIcon className="icon" icon="plus-circle" size="1x" />
-				<li 
+				<li
 					key={index}
 					className="Result-Skills Added"
 					data-id={category}

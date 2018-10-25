@@ -6,25 +6,24 @@ import { setResults } from '../actions/actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class NotAddedCategories extends Component {
-	
+
 	deleteCategory = (e) => {
 		let selected = e.target.dataset.id;
-		
+
 		this.props.deleteNotAddedCategory(selected);
 		this.props.addCategory(selected);
-		
+
     let listedSkills = this.props.addedCategories;
     listedSkills.push(selected);
-
+			
     let jobResults = this.props.jobs.jobs.rss.channel.item
-		this.props.setResults(jobResults, listedSkills);	
+		this.props.setResults(jobResults, listedSkills);
 	}
 
 	render() {
-		const notAdded = this.props.notAdded.map((category, index) => 
+		const notAdded = this.props.notAdded.map((category, index) =>
 		<div key={index} className="Resulted-Categories">
-			<FontAwesomeIcon className="icon" icon="minus-circle" size="1x" />
-			<li 
+			<li
 				key={index}
 				data-id={category}
 				className="Result-Skills NotAdded"
@@ -37,7 +36,7 @@ class NotAddedCategories extends Component {
 	if (true) {
 		return (
 			<div className="Skills-Container">
-				<h3>Skills You Don't Have</h3>
+				<h3>Not Yet Acquired</h3>
 				<ul>{notAdded}</ul>
 			</div>
 		);

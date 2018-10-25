@@ -9,6 +9,7 @@ import { SET_RESULTS } from '../actions/types';
 
 const initialState = {
 	jobs: {},
+	query: false,
 	returnedCategories: [],
 	addedCategories: [],
 	NotAddedCategories: [],
@@ -65,9 +66,12 @@ export default function(state = initialState, action) {
 			return {
 				...state,
 				jobs: action.payload,
+				query: action.query,
 				returned: true,
 				returnedCategories:sortedItems,
 				NotAddedCategories:sortedItems,
+				addedCategories: [],
+				setResults: [],
 				start: 0,
 				stop: 10
 			}

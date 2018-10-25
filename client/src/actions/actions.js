@@ -15,7 +15,8 @@ export const searchJobs = (query) => dispatch => {
     .then(jobs =>
     	dispatch ({
       	type: SEARCH_JOBS,
-      	payload: jobs
+      	payload: jobs,
+				query: query,
       }));
 }
 
@@ -69,7 +70,6 @@ export const setResults = (jobs, mySkills) => dispatch => {
 		}
 
     let matchedSkills =[];
-
     listedSkills.forEach(skill => {
   		if(mySkills.indexOf(skill)>=0)	{
    			matchedSkills.push(skill);

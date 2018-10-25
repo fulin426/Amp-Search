@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 8px;
   font-family: sans-serif, 'roboto';
 }
 
@@ -58,7 +58,7 @@ li:hover {
 }
 
 .Search-Input {
-	width: 78%;
+	width: 64%;
 	height: 40px;
 	border-radius: 5px;
 	border: 1px solid black;
@@ -216,6 +216,12 @@ li:hover {
 	width: 90%;
 }
 
+.Search-Directions {
+  font-size: 16px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+}
+
 .jobResult {
 	margin-bottom: 10px;
 	border: 1px solid #E0E0E0;
@@ -265,9 +271,8 @@ li:hover {
 }
 
 footer {
-	margin-top: 18px;
+	margin-top: 25px;
 	text-align: center;
-	height: 250px;
 }
 
 .contacts-wrapper {
@@ -292,6 +297,10 @@ footer {
 	.Landing-Div	{
 		height: 160px;
 	}
+
+  .Search-Input {
+  	width: 78%;
+  }
 
 	.JobResults {
  	 width: 75%;

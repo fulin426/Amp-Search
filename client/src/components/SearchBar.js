@@ -4,12 +4,6 @@ import { searchJobs } from '../actions/actions';
 import { setResults } from '../actions/actions';
 
 class SearchBar extends React.Component {
-
-  componentWillMount() {
-    let query = 'san jose';
-    this.props.searchJobs(query);
-  }
-
   onFormSubmit = (e) => {
     e.preventDefault();
     let query = this.refs.zipcode.value;
@@ -17,17 +11,7 @@ class SearchBar extends React.Component {
     this.refs.zipcode.value = '';
   }
 
-  showResults = () => {
-    let listedSkills = this.props.addedCategories;
-    this.props.setResults(this.props.jobs.jobs.rss.channel.item, listedSkills);
-  }
-
 	render() {
-    if (this.props.jobs.returned === true &&
-      this.props.jobs.jobs.rss.channel['os:totalResults']._text > 0) {
-      {this.showResults};
-    };
-
     return (
     <div>
       <div className="SearchBar-Container">
@@ -53,6 +37,7 @@ class SearchBar extends React.Component {
 
 const mapStateToProps = state => ({
   returned: state.jobs.returned,
+  addedCategories: state.jobs.addedCategories,
   jobs: state.jobs,
   resultSet: state.jobs.resultSet
 });
