@@ -39,7 +39,6 @@ app.get("/api/search/:location", (req, res) => {
     console.log('error:', error);
     console.log('statusCode:', response && response.statusCode);
     let result = convert.xml2json(body, {compact: true, spaces: 4});
-    console.log(result);
     res.send(result);
   });
 });
