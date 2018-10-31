@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../index.css'
 
-class Directions extends React.Component {
+class ErrorHandle extends React.Component {
 	render() {
-    if (this.props.addedCategories.length === 0 &&
-		this.props.jobs !== 0) {
+    if (this.props.jobs === 0) {
   		return (
   			<div>
           <div className="Search-Directions">
-            <p>Here are the trending job skills in the area searched.
-              Start adding skills and see which jobs match your skillset! </p>
+            <p>No results for {this.props.query}. Please try searching a different area.</p>
           </div>
   			</div>
   		);
@@ -22,7 +20,8 @@ class Directions extends React.Component {
 
 const mapStateToProps = state => ({
   addedCategories: state.jobs.addedCategories,
-	jobs: state.jobs.jobs
+  jobs: state.jobs.jobs,
+  query: state.jobs.query
 });
 
-export default connect(mapStateToProps)(Directions);
+export default connect(mapStateToProps)(ErrorHandle);

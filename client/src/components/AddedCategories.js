@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { deleteCategory } from '../actions/actions';
 import { setNotAddedCategories } from '../actions/actions';
 import { setResults } from '../actions/actions';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class AddedCategories extends Component {
 
@@ -16,7 +15,7 @@ class AddedCategories extends Component {
     let listedSkills = this.props.addedCategories;
     listedSkills = listedSkills.filter( item => item !== selected);
 
-    let jobResults = this.props.jobs.jobs.rss.channel.item
+    let jobResults = this.props.jobs.rss.channel.item
 		this.props.setResults(jobResults, listedSkills);
 	}
 
@@ -33,7 +32,7 @@ class AddedCategories extends Component {
 				</li>
 			</div>
 		);
-		if (true) {
+		if (this.props.jobs !== 0) {
 			return (
 				<div className="Skills-Container">
 					<h3>Skills You Know</h3>
@@ -47,7 +46,7 @@ class AddedCategories extends Component {
 }
 const mapStateToProps = state => ({
   addedCategories: state.jobs.addedCategories,
-  jobs: state.jobs,
+  jobs: state.jobs.jobs,
   returned: state.jobs.returned,
   resultSet: state.jobs.resultSet
 });

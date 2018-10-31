@@ -13,7 +13,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 library.add(faClipboardList, faChartPie, faChartLine, faPlusCircle, faMinusCircle, faSmileBeam);
 
-import Categories from "./components/Category";
 import SearchBar from "./components/SearchBar";
 import ShowResults from "./components/ShowResults";
 import Footer from "./components/Footer";

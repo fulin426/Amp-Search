@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = React.createClass({
 	render() {
 		return (
-			<div>			
+			<div>
 			<footer role="contentinfo">
 {/*				<p>© Fu-Lin Liu</p>*/}
 					<div className='contacts-wrapper'>

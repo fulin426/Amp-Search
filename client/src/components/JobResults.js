@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Directions } from "./Directions";
 
 class JobResults extends React.Component {
 
@@ -12,7 +11,7 @@ class JobResults extends React.Component {
 
 	jobSort = jobSort.filter(item => item.category !== "" );
 	jobSort = jobSort.filter(item => item.percentage !== 0 );
-	jobSort = jobSort.filter(item => item.percentage > 25 );
+	jobSort = jobSort.filter(item => item.percentage > 15 );
 
 	const jobResults = jobSort.map((listing, index) =>
 		<div

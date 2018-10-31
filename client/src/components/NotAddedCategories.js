@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { deleteNotAddedCategory } from '../actions/actions';
 import { addCategory } from '../actions/actions';
 import { setResults } from '../actions/actions';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class NotAddedCategories extends Component {
 
@@ -15,8 +14,8 @@ class NotAddedCategories extends Component {
 
     let listedSkills = this.props.addedCategories;
     listedSkills.push(selected);
-			
-    let jobResults = this.props.jobs.jobs.rss.channel.item
+
+    let jobResults = this.props.jobs.rss.channel.item
 		this.props.setResults(jobResults, listedSkills);
 	}
 
@@ -33,7 +32,7 @@ class NotAddedCategories extends Component {
 			</li>
 		</div>
 		);
-	if (true) {
+	if (this.props.jobs !== 0) {
 		return (
 			<div className="Skills-Container">
 				<h3>Not Yet Acquired</h3>
@@ -49,7 +48,7 @@ class NotAddedCategories extends Component {
 const mapStateToProps = state => ({
   notAdded: state.jobs.NotAddedCategories,
   addedCategories: state.jobs.addedCategories,
-  jobs: state.jobs,
+  jobs: state.jobs.jobs,
   returned: state.jobs.returned,
   resultSet: state.jobs.resultSet
 });

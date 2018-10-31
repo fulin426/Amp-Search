@@ -26,6 +26,20 @@ export default function(state = initialState, action) {
 	switch(action.type) {
 		case SEARCH_JOBS:
 			let items = action.payload.rss.channel.item;
+			if (action.payload.rss.channel['os:totalResults']._text ===  '0') {
+				console.log('error no results');
+				return {
+					...state,
+					jobs: 0,
+					query: action.query,
+					returned: true,
+					returnedCategories:[],
+					NotAddedCategories:[],
+					addedCategories: [],
+					setResults: [],
+					renderbubble: "hide",
+				}
+			}
 			let rawResults = [];
 			items.forEach(item =>
 				rawResults = rawResults.concat(item.category)
@@ -59,7 +73,6 @@ export default function(state = initialState, action) {
 			return b[1]-a[1];
 			});
 			let slicedSortable = sortable.slice(0, 20);
-
 			let sortedItems = [];
 			for (let i=0; i<slicedSortable.length; i++) {
 				sortedItems.push(slicedSortable[i][0]);
@@ -83,11 +96,11 @@ export default function(state = initialState, action) {
 				start: state.start + 10,
 				stop: state.stop + 10
 			};
-			case SHOW_RENDERING:
-				return {
-					...state,
-					renderbubble: "show"
-				};
+		case SHOW_RENDERING:
+			return {
+				...state,
+				renderbubble: "show"
+			};
 		case SET_NOTADDED_CATEGORIES:
 			let addedArry = state.returnedCategories;
 			let toRemove = state.addedCategories;

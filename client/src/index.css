@@ -36,6 +36,7 @@ li:hover {
 	float: left;
 	padding: 0;
 	margin: 0;
+  cursor: pointer;
 }
 
 .Header-Section {
@@ -199,9 +200,9 @@ li:hover {
 }
 
 .Resulted-Categories {
-	width: 174px;
-	height: 21px;
-	line-height: 12px;
+  width: 182px;
+  height: 22px;
+  line-height: 12px;
 }
 
 .Required-Skills {
@@ -232,6 +233,7 @@ li:hover {
   font-size: 16px;
   margin-top: 6px;
   margin-bottom: 18px;
+  text-align: center;
 }
 
 .jobResult {
