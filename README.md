@@ -3,7 +3,6 @@ Thinkful (https://www.thinkful.com) Third Capstone Project Amp Search is a inter
 
 ## Screenshots
 ![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/landing_page.png)
-![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/skills_category.png)
 ![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/results_page.png)
 
 ## Working Prototype
