@@ -2,8 +2,8 @@
 Thinkful (https://www.thinkful.com) Third Capstone Project Amp Search is a interactive fullstack web app that allows users to search for jobs based on skills/technlogies that the user has. The jobs with the closests match are shown at the top of the search results. Users can then use that information to asses which technologies are in demand based on region. 
 
 ## Screenshots
-![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/landing_page.png)
-![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/results_page.png)
+![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/landing_page_new.png)
+![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/results_page_new.png)
 
 ## Working Prototype
 Live preview https://ampsearch.herokuapp.com/
