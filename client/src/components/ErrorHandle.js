@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../index.css'
 
-class ErrorHandle extends React.Component {
+class ErrorHandle extends Component {
 	render() {
     if (this.props.jobs === 0) {
   		return (

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchJobs } from '../actions/actions';
 import { setResults } from '../actions/actions'
 import { showRendering } from '../actions/actions';
 import Loading from "./Loading";
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
   onFormSubmit = (e) => {
     e.preventDefault();
     this.props.showRendering();

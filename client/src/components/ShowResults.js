@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AddedCategories from "./AddedCategories";
 import NotAddedCategories from "./NotAddedCategories";
@@ -7,7 +7,7 @@ import Directions from "./Directions";
 import ErrorHandle from "./ErrorHandle";
 import '../index.css'
 
-class Showresults extends React.Component {
+class Showresults extends Component {
 	render() {
 		if (this.props.jobs.returned === true) {
 		return (

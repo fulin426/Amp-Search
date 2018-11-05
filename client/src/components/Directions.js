@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../index.css'
 
-class Directions extends React.Component {
+class Directions extends Component {
 	render() {
     if (this.props.addedCategories.length === 0 &&
 		this.props.jobs !== 0) {

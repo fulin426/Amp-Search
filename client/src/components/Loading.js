@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactLoading from 'react-loading';
 import { connect } from 'react-redux';
 import '../index.css';
 
-class Loading extends React.Component {
+class Loading extends Component {
 render() {
   if (this.props.renderbubble === "show") {
     return (

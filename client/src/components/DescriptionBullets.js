@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class DescriptionBullets extends React.Component {
+class DescriptionBullets extends Component {
 	render() {
 		if (this.props.returned === true || this.props.resultSet === true) {
       return (null);
     } else {
 		return (
 				<div className="home-learn">
-					<div className="learn-sector">	
+					<div className="learn-sector">
 						<div className="learn-title-wrapper">
 							<p>Why Use AmpSearch?</p>
 					  </div>
@@ -37,7 +37,7 @@ class DescriptionBullets extends React.Component {
 	          		Free to use, no sign up, no ads
 	          	</span>
 	          </div>
-	        </div>  
+	        </div>
 				</div>
 			);
 		}

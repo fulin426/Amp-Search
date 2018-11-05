@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class JobResults extends React.Component {
+class JobResults extends Component {
 
 	render() {
 
