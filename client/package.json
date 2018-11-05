@@ -11,6 +11,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "react": "15.4.0",
     "react-dom": "15.4.0",
+    "react-google-location": "^1.2.2",
     "semantic-ui": "^2.4.2"
   },
   "scripts": {
