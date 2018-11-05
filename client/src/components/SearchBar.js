@@ -6,17 +6,24 @@ import { showRendering } from '../actions/actions';
 import Loading from "./Loading";
 
 class SearchBar extends Component {
-  onFormSubmit = (e) => {
-    e.preventDefault();
-    this.props.showRendering();
-    let query = this.refs.zipcode.value;
-    this.props.searchJobs(query);
-    this.refs.zipcode.value = '';
+  constructor(props) {
+    super(props);
+    this.state = {
+      term: ''
+    };
   }
 
-  //componentDidMount() {
-  //this.nameInput.focus();
-  //}
+  onFormSubmit = (event) => {
+    event.preventDefault();
+    this.props.showRendering();
+    let query = this.state.term;
+    this.props.searchJobs(query);
+    this.setState({term: ''});
+  }
+
+  componentDidMount() {
+  this.nameInput.focus();
+  }
 
 	render() {
     return (
@@ -28,10 +35,11 @@ class SearchBar extends Component {
         </div>
         <form onSubmit={this.onFormSubmit} role="search">
             <input
+              value={this.state.term}
+              onChange={event => this.setState({term: event.target.value})}
               className="Search-Input"
               placeholder='Search'
-              ref='zipcode'
-              //ref={(input) => { this.nameInput = input; }}
+              ref={(input) => { this.nameInput = input; }}
             />
             <input
               className="Search-Button"

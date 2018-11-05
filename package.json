@@ -10,6 +10,7 @@
     "express": "4.13.3",
     "fs": "0.0.2",
     "react": "^16.4.2",
+    "react-google-location": "^1.2.2",
     "react-loading": "^2.0.3",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
