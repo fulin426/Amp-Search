@@ -10,6 +10,8 @@ class Directions extends Component {
   			<div>
           <div className="Search-Directions">
             <p>Here are the trending job skills in the area searched.
+							Click on one of the <span className="red-skill">RED</span> categories
+							and it will turn <span className="green-skill">GREEN</span>.
               Start adding skills and see which jobs match your skillset! </p>
           </div>
   			</div>

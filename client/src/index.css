@@ -248,35 +248,13 @@ li:hover {
   font-size: 26px;
   padding-left: 25px;
 }
-.Restart-Button {
-  display: inline-block;
-  height: 40px;
-  width: 140px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  float: right;
+
+.red-skill {
+  color: #ff4433;
 }
 
-.Restart-Button-Error {
-  display: inline-block;
-  height: 40px;
-  width: 140px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0 auto;
-}
-
-.Restart-Button-Error-Wrapper {
-	width: 140px;
-	margin: 0 auto;
-}
-
-.toggle-selected {
-	background-color: #339933;
+.green-skill {
+  color: #339933;
 }
 
 /*footer*/

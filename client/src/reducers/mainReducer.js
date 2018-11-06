@@ -1,5 +1,4 @@
 import { SEARCH_JOBS } from '../actions/types';
-import { NEXT_CATEGORY } from '../actions/types';
 import { ADD_CATEGORY } from '../actions/types';
 import { SET_RETURNED_CATEGORIES } from '../actions/types';
 import { DELETE_CATEGORY } from '../actions/types';
@@ -18,8 +17,6 @@ const initialState = {
 	renderbubble: "hide",
 	resultSet: false,
 	returned: false,
-	start: 0,
-	stop: 0,
 }
 
 export default function(state = initialState, action) {
@@ -87,18 +84,11 @@ export default function(state = initialState, action) {
 				addedCategories: [],
 				setResults: [],
 				renderbubble: "hide",
-				start: 0,
-				stop: 10
 			}
-		case NEXT_CATEGORY:
-			return {
-				...state,
-				start: state.start + 10,
-				stop: state.stop + 10
-			};
 		case SHOW_RENDERING:
 			return {
 				...state,
+				returned: false,
 				renderbubble: "show"
 			};
 		case SET_NOTADDED_CATEGORIES:

@@ -5,6 +5,17 @@ import { addCategory } from '../actions/actions';
 import { setResults } from '../actions/actions';
 
 class NotAddedCategories extends Component {
+	componentDidMount() {
+		let selected = this.props.notAdded[0];
+		this.props.deleteNotAddedCategory(selected);
+		this.props.addCategory(selected);
+
+		let listedSkills = this.props.addedCategories;
+    listedSkills.push(selected);
+
+		let jobResults = this.props.jobs.rss.channel.item
+		this.props.setResults(jobResults, listedSkills);
+	}
 
 	deleteCategory = (e) => {
 		let selected = e.target.dataset.id;

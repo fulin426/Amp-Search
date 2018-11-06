@@ -1,5 +1,4 @@
 import { SEARCH_JOBS } from './types';
-import { NEXT_CATEGORY } from './types';
 import { ADD_CATEGORY } from './types';
 import { SET_RETURNED_CATEGORIES } from './types';
 import { DELETE_CATEGORY } from './types';
@@ -19,12 +18,6 @@ export const searchJobs = (query) => dispatch => {
       	payload: jobs,
 				query: query,
       }));
-}
-
-export const nextCategory = () => dispatch => {
-	dispatch({
-		type: NEXT_CATEGORY
-	});
 }
 
 export const showRendering = () => dispatch => {
