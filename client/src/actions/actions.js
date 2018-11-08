@@ -93,7 +93,6 @@ export const setResults = (jobs, mySkills) => dispatch => {
 			sortedJobs.push({
 				title: jobs[i].title._text,
 				link: jobs[i].link._text,
-				location: jobs[i].location._text,
 				category: sortCategory(jobs[i].category),
 				percentage: sortPercentage(jobs[i].category, mySkills)
 			});

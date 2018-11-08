@@ -11,7 +11,9 @@ const store = createStore(
   initialState,
   compose(
     applyMiddleware(...middleware),
-  //  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  //comment out before deploying
+  //only use when testing state in Redux  
+  //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 
