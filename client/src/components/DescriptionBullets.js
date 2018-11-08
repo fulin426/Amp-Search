@@ -22,13 +22,13 @@ class DescriptionBullets extends Component {
 	          <div className="App-Description">
 	          	<FontAwesomeIcon icon="chart-pie" size="3x" />
 	          		<span className="App-Description-Line">
-	          			Find jobs based on how well they are matched to your skillset
+	          			Find jobs based on percentage match to your skillset
 	          		</span>
 	         		</div>
 	          <div className="App-Description">
 	          	<FontAwesomeIcon icon="clipboard-list" size="3x" />
-	         	 	<span className="App-Description-Line">
-	          		Assess which technologies to learn in order to qualify for more jobs
+	         	 	<span className="App-Description-Line Assess">
+	          		  Assess which technologies to learn to qualify for more jobs
 	          	</span>
 	          </div>
 	          <div className="App-Description">
