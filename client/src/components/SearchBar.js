@@ -25,6 +25,8 @@ class SearchBar extends Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
+    //only search after state has been updated
+    //user hits enter once to set the city name then enter againt to search
     if (this.state.loaded === 'Yes') {
       this.props.showRendering();
       let query = this.state.city;
