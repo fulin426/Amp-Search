@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Footer extends Component{
-	render() {
-		return (
-			<div>
+const Footer = () => {
+	return (
+	<div>
 			<footer role="contentinfo">
-{/*				<p>© Fu-Lin Liu</p>*/}
+	{/*				<p>© Fu-Lin Liu</p>*/}
 					<div className='contacts-wrapper'>
 					<div className='contact-logo email'>
 					<a className='footer-link' href='mailto:fulin426@gmail.com?subject=Hello%20There' aria-label='email contact info'>
@@ -25,8 +24,7 @@ class Footer extends Component{
 				</div>
 			</footer>
 		</div>
-		);
-	}
+	);
 }
 
 export default Footer;

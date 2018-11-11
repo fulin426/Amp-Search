@@ -4,14 +4,11 @@ import { connect } from 'react-redux';
 class JobResults extends Component {
 
 	render() {
-
-	let jobSort = this.props.results.sort((a, b) =>
-		b.percentage - a.percentage
-		);
-
+	let jobSort = this.props.results;
 	jobSort = jobSort.filter(item => item.category !== "" );
 	jobSort = jobSort.filter(item => item.percentage !== 0 );
 	jobSort = jobSort.filter(item => item.percentage > 15 );
+	jobSort = jobSort.sort((a, b) => b.percentage - a.percentage);
 
 	const jobResults = jobSort.map((listing, index) =>
 		<div

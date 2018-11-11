@@ -12,7 +12,7 @@ const store = createStore(
   compose(
     applyMiddleware(...middleware),
   //comment out before deploying
-  //only use when testing state in Redux  
+  //only use when testing state in Redux
   //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
