@@ -19,7 +19,7 @@ class JobResults extends Component {
 				{listing.title}
 			</a>
 			<p className="Required-Skills">Required Skills: {listing.category}</p>
-			<p className="Percentage-Match">Percentage Match: {listing.percentage}%</p>
+			<p className="Percentage-Match">Match: {listing.percentage}%</p>
 		</div>
 		);
 		return (
