@@ -18,6 +18,7 @@ import ShowResults from "./components/ShowResults";
 import Footer from "./components/Footer";
 import DescriptionBullets from "./components/DescriptionBullets";
 import Header from "./components/Header";
+import ContactMessage from "./components/ContactMessage";
 
 class App extends React.Component {
   render() {
@@ -29,6 +30,7 @@ class App extends React.Component {
           <ShowResults />
           <DescriptionBullets />
           <Footer />
+          <ContactMessage />
         </div>
       </Provider>
     );

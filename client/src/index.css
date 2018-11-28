@@ -261,6 +261,16 @@ li:hover {
   color: #339933;
 }
 
+/*ContactMessage*/
+
+.contact-container {
+  max-width: 550px;
+  margin: 0px auto;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 30px;
+}
+
 /*footer*/
 .footer-link {
 	color: black;
@@ -274,7 +284,7 @@ footer {
 .contacts-wrapper {
 	margin: 0 auto;
 	max-width: 240px;
-	margin-top: 10px;
+	margin-top: 30px;
 }
 
 .contact-logo{

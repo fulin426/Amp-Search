@@ -1,4 +1,5 @@
 import React from 'react';
+import '../index.css'
 
 const Footer = () => {
 	return (
@@ -17,7 +18,7 @@ const Footer = () => {
 					</a>
 				</div>
 				<div className='contact-logo github'>
-					<a className='footer-link' href='https://github.com/fulin426'aria-label='Github Account'>
+					<a className='footer-link' href='https://github.com/fulin426/Amp-Search'aria-label='Github Account'>
 					<i className="fab fa-github fa-2x"></i>
 					</a>
 				</div>
