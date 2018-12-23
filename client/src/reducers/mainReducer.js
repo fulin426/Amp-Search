@@ -41,9 +41,9 @@ export default function(state = initialState, action) {
 			items.forEach(item =>
 				rawResults = rawResults.concat(item.category)
 			);
-
+			//filter out any undefined results so avoid errors
 			let categoryArray = rawResults.filter(item => item !== undefined);
-
+			//create character map
 			let skillsObj = {};
 			for (let i=0; i<categoryArray.length; i++) {
 				if (skillsObj[categoryArray[i]._text]) {
@@ -52,14 +52,14 @@ export default function(state = initialState, action) {
 					skillsObj[categoryArray[i]._text] = 1
 				}
 			}
-
-			for (let i=0; i<categoryArray.length; i++) {
-				if (skillsObj[categoryArray[i]._text]) {
-					skillsObj[categoryArray[i]._text]++;
-				} else {
-				skillsObj[categoryArray[i]._text] = 1
-				}
-			}
+			//
+			// for (let i=0; i<categoryArray.length; i++) {
+			// 	if (skillsObj[categoryArray[i]._text]) {
+			// 		skillsObj[categoryArray[i]._text]++;
+			// 	} else {
+			// 	skillsObj[categoryArray[i]._text] = 1
+			// 	}
+			// }
 
 			let sortable = [];
 			for (let skill in skillsObj) {
