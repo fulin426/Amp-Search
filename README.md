@@ -9,14 +9,14 @@ Live preview https://ampsearch.herokuapp.com/
 ![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/results_page_new.png)
 
 ## Running locally
-git clone https://github.com/fullstackreact/food-lookup-demo.git
-cd food-lookup-demo
-npm i
+git clone to local folder and CD into it
 
-cd client
-npm i
+npm install
+
+cd client npm install
 
 cd ..
+
 npm start
 
 ## Technology
