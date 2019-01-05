@@ -1,12 +1,23 @@
 # # Amp Search React Capstone
-Thinkful (https://www.thinkful.com) Third Capstone Project Amp Search is a interactive fullstack web app that allows users to search for jobs based on skills/technlogies that the user has. The jobs with the closest match are shown at the top of the search results. Users can then use that information to asses which technologies are in demand based on region. 
+Thinkful (https://www.thinkful.com) Third Capstone Project Amp Search is a interactive fullstack web app that allows users to search for jobs based on skills/technlogies that the user has. The jobs with the closest match are shown at the top of the search results. Users can then use that information to asses which technologies are in demand based on region.
+
+## Working Prototype
+Live preview https://ampsearch.herokuapp.com/
 
 ## Screenshots
 ![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/landing_page_new.png)
 ![Screenshots](https://raw.githubusercontent.com/fulin426/Amp-Search/master/client/public/results_page_new.png)
 
-## Working Prototype
-Live preview https://ampsearch.herokuapp.com/
+## Running locally
+git clone https://github.com/fullstackreact/food-lookup-demo.git
+cd food-lookup-demo
+npm i
+
+cd client
+npm i
+
+cd ..
+npm start
 
 ## Technology
 ### Front End
@@ -20,7 +31,7 @@ Live preview https://ampsearch.herokuapp.com/
 * Node.js
 
 ## Responsive
-This app is responsive and optimized for desktop and mobile use. 
+This app is responsive and optimized for desktop and mobile use.
 
 
 

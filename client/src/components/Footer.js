@@ -8,17 +8,17 @@ const Footer = () => {
 	{/*				<p>© Fu-Lin Liu</p>*/}
 					<div className='contacts-wrapper'>
 					<div className='contact-logo email'>
-					<a className='footer-link' href='mailto:fulin426@gmail.com?subject=Hello%20There' aria-label='email contact info'>
+					<a className='footer-link' href='mailto:fulin426@gmail.com?subject=Hello%20There' target="_blank" aria-label='email contact info'>
 					<i className="far fa-envelope fa-2x"></i>
 					</a>
 				</div>
 				<div className='contact-logo linkedin'>
-					<a className='footer-link' href='https://www.linkedin.com/in/fu-lin-liu-46694714/' aria-label='Linkedin Page'>
+					<a className='footer-link' href='https://www.linkedin.com/in/fu-lin-liu-46694714/' target="_blank" aria-label='Linkedin Page'>
 					<i className="fab fa-linkedin fa-2x"></i>
 					</a>
 				</div>
 				<div className='contact-logo github'>
-					<a className='footer-link' href='https://github.com/fulin426/Amp-Search'aria-label='Github Account'>
+					<a className='footer-link' href='https://github.com/fulin426/Amp-Search' target="_blank" aria-label='Github Account'>
 					<i className="fab fa-github fa-2x"></i>
 					</a>
 				</div>
